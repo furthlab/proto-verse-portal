@@ -28,13 +28,13 @@ const HeroSection = () => {
               <div className="relative flex-1">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
                 <Input 
-                  placeholder="Search organisms, genes, studies..." 
+                  placeholder="Search genes (e.g., BRCA1, TP53, EGFR)..." 
                   className="pl-10 h-12 border-border bg-background/80"
                 />
               </div>
               <Button size="lg" className="h-12 px-6">
-                <Database className="w-4 h-4 mr-2" />
-                Search
+                <Search className="w-4 h-4 mr-2" />
+                Search Genes
               </Button>
             </div>
 

@@ -16,10 +16,10 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#" className="text-foreground hover:text-primary transition-colors">
+            <a href="/" className="text-foreground hover:text-primary transition-colors">
               Home
             </a>
-            <a href="#" className="text-foreground hover:text-primary transition-colors">
+            <a href="/evolutionary-tree" className="text-foreground hover:text-primary transition-colors">
               Organisms
             </a>
             <a href="#" className="text-foreground hover:text-primary transition-colors">
