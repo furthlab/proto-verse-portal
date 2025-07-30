@@ -23,13 +23,13 @@ const Navbar = () => {
               Organisms
             </a>
             <a href="#" className="text-foreground hover:text-primary transition-colors">
-              Research
+              Genetic tools
+            </a>
+            <a href="#" className="text-foreground hover:text-primary transition-colors">
+              Data tools
             </a>
             <a href="#" className="text-foreground hover:text-primary transition-colors">
               Publications
-            </a>
-            <a href="#" className="text-foreground hover:text-primary transition-colors">
-              Data Tools
             </a>
           </div>
 
