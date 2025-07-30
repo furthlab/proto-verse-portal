@@ -12,10 +12,10 @@ const HeroSection = () => {
           <div className="space-y-6">
             <div className="space-y-4">
               <h1 className="text-4xl lg:text-6xl font-bold text-foreground leading-tight">
-                Advancing
-                <span className="text-transparent bg-gradient-primary bg-clip-text"> Neural</span>
+                Non
+                <span className="text-transparent bg-gradient-primary bg-clip-text"> Synaptic</span>
                 <br />
-                Research
+                Memory
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Comprehensive database and research portal for non-traditional learning model organisms. 
