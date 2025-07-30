@@ -11,7 +11,7 @@ const Footer = () => {
               <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
                 <Database className="w-5 h-5 text-white" />
               </div>
-              <span className="text-xl font-bold">NeuroBase</span>
+              <span className="text-xl font-bold">ProtoMem</span>
             </div>
             <p className="text-white/80 text-sm leading-relaxed">
               Advancing neuroscience research through comprehensive databases 
