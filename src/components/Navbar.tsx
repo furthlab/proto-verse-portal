@@ -22,7 +22,7 @@ const Navbar = () => {
             <a href="/evolutionary-tree" className="text-foreground hover:text-primary transition-colors">
               Organisms
             </a>
-            <a href="#" className="text-foreground hover:text-primary transition-colors">
+            <a href="/genetic-tools" className="text-foreground hover:text-primary transition-colors">
               Genetic tools
             </a>
             <a href="#" className="text-foreground hover:text-primary transition-colors">
