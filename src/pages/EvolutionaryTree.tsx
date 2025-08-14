@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Search, GitBranch, Eye, Download, Info } from "lucide-react";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const treeData = [
@@ -96,9 +95,7 @@ const EvolutionaryTree = () => {
   const phylums = [...new Set(treeData.map(org => org.phylum))];
 
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
-      
+    <>
       <div className="bg-gradient-hero py-12 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-8">
@@ -245,7 +242,7 @@ const EvolutionaryTree = () => {
       </section>
 
       <Footer />
-    </div>
+    </>
   );
 };
 
