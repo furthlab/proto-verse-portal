@@ -41,9 +41,9 @@ const GenomeBrowser = () => {
   });
 
   return (
-    <section className="py-16 px-4 bg-muted/30">
-      <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-8">
+    <section className="py-16 bg-muted/30">
+      <div className="container mx-auto max-w-6xl px-4 mb-8">
+        <div className="text-center">
           <h2 className="text-3xl font-bold text-foreground mb-4">
             Interactive Genome Browser
           </h2>
@@ -52,14 +52,16 @@ const GenomeBrowser = () => {
             Navigate through chromosomes and discover the intricate details of genetic information.
           </p>
         </div>
-        
-        <div className="bg-background rounded-lg border shadow-sm overflow-hidden">
-          <div className="h-96">
-            <JBrowseLinearGenomeView viewState={state} />
-          </div>
+      </div>
+      
+      <div className="w-full bg-background border-y shadow-sm overflow-hidden">
+        <div className="h-96">
+          <JBrowseLinearGenomeView viewState={state} />
         </div>
-        
-        <div className="mt-6 text-center">
+      </div>
+      
+      <div className="container mx-auto max-w-6xl px-4 mt-6">
+        <div className="text-center">
           <p className="text-sm text-muted-foreground">
             Currently viewing: Volvox Test Data - ctgA:1105..4000
           </p>
