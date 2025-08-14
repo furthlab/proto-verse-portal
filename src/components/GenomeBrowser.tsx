@@ -1,99 +1,43 @@
+import '@fontsource/roboto';
 import React from 'react';
-import { createViewState, JBrowseLinearGenomeView } from '@jbrowse/react-linear-genome-view';
+import {
+  createViewState,
+  JBrowseLinearGenomeView,
+} from '@jbrowse/react-linear-genome-view';
 
 const GenomeBrowser = () => {
-  const assembly = {
-    name: 'hg38',
-    aliases: ['GRCh38'],
-    sequence: {
-      type: 'ReferenceSequenceTrack',
-      trackId: 'hg38-ReferenceSequenceTrack',
-      adapter: {
-        type: 'BgzipFastaAdapter',
-        fastaLocation: {
-          uri: 'https://jbrowse.org/genomes/GRCh38/fasta/hg38.prefix.fa.gz',
-          locationType: 'UriLocation',
-        },
-        faiLocation: {
-          uri: 'https://jbrowse.org/genomes/GRCh38/fasta/hg38.prefix.fa.gz.fai',
-          locationType: 'UriLocation',
-        },
-        gziLocation: {
-          uri: 'https://jbrowse.org/genomes/GRCh38/fasta/hg38.prefix.fa.gz.gzi',
-          locationType: 'UriLocation',
-        },
-      },
-    },
-    refNameAliases: {
-      adapter: {
-        type: 'RefNameAliasAdapter',
-        location: {
-          uri: 'https://s3.amazonaws.com/jbrowse.org/genomes/GRCh38/hg38_aliases.txt',
-          locationType: 'UriLocation',
-        },
-      },
-    },
-  };
-
-  const tracks = [
-    {
-      type: 'FeatureTrack',
-      trackId: 'ncbi_refseq_109_hg38',
-      name: 'NCBI RefSeq (GFF3Tabix)',
-      assemblyNames: ['hg38'],
-      category: ['Genes'],
-      adapter: {
-        type: 'Gff3TabixAdapter',
-        gffGzLocation: {
-          uri: 'https://s3.amazonaws.com/jbrowse.org/genomes/GRCh38/ncbi_refseq/GCA_000001405.15_GRCh38_full_analysis_set.refseq_annotation.sorted.gff.gz',
-          locationType: 'UriLocation',
-        },
-        index: {
-          location: {
-            uri: 'https://s3.amazonaws.com/jbrowse.org/genomes/GRCh38/ncbi_refseq/GCA_000001405.15_GRCh38_full_analysis_set.refseq_annotation.sorted.gff.gz.tbi',
+  const state = createViewState({
+    assembly: {
+      name: 'volvox',
+      sequence: {
+        type: 'ReferenceSequenceTrack',
+        trackId: 'volvox_refseq',
+        adapter: {
+          type: 'TwoBitAdapter',
+          twoBitLocation: {
+            uri: 'https://jbrowse.org/genomes/volvox/volvox.2bit',
             locationType: 'UriLocation',
           },
         },
       },
     },
-  ];
-
-  const defaultSession = {
-    name: 'Human Genome Browser',
-    view: {
-      id: 'linearGenomeView',
-      type: 'LinearGenomeView',
-      tracks: [
-        {
-          id: 'ncbi_refseq_109_hg38',
-          type: 'FeatureTrack',
-          configuration: 'ncbi_refseq_109_hg38',
-          displays: [
-            {
-              id: 'ncbi_refseq_109_hg38-LinearBasicDisplay',
-              type: 'LinearBasicDisplay',
-              configuration: 'ncbi_refseq_109_hg38-LinearBasicDisplay',
-            },
-          ],
+    tracks: [
+      {
+        type: 'FeatureTrack',
+        trackId: 'volvox_gff_genes',
+        name: 'Genes',
+        assemblyNames: ['volvox'],
+        category: ['Genes'],
+        adapter: {
+          type: 'Gff3Adapter',
+          gffLocation: {
+            uri: 'https://jbrowse.org/genomes/volvox/volvox.gff3',
+            locationType: 'UriLocation',
+          },
         },
-      ],
-      displayedRegions: [
-        {
-          refName: 'chr1',
-          start: 67000000,
-          end: 67200000,
-          reversed: false,
-          assemblyName: 'hg38',
-        },
-      ],
-    },
-  };
-
-  const state = createViewState({
-    assembly,
-    tracks,
-    location: 'chr1:67,000,000-67,200,000',
-    defaultSession,
+      },
+    ],
+    location: 'ctgA:1105..4000',
   });
 
   return (
@@ -117,7 +61,7 @@ const GenomeBrowser = () => {
         
         <div className="mt-6 text-center">
           <p className="text-sm text-muted-foreground">
-            Currently viewing: Human Genome (GRCh38) - Chromosome 1: 67,000,000-67,200,000
+            Currently viewing: Volvox Test Data - ctgA:1105..4000
           </p>
         </div>
       </div>
