@@ -58,6 +58,7 @@ export default {
 					light: 'hsl(var(--scientific-light))',
 					accent: 'hsl(var(--scientific-accent))'
 				},
+				manatee: 'hsl(var(--manatee))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',

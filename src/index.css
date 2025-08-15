@@ -8,39 +8,40 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 213 31% 14%;
+    --background: 197 65% 94%;
+    --foreground: 215 62% 18%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 213 31% 14%;
+    --card: 197 65% 94%;
+    --card-foreground: 215 62% 18%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 213 31% 14%;
+    --popover: 197 65% 94%;
+    --popover-foreground: 215 62% 18%;
 
-    --primary: 186 100% 31%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 215 62% 18%;
+    --primary-foreground: 197 65% 94%;
 
-    --secondary: 186 25% 96%;
-    --secondary-foreground: 186 100% 31%;
+    --secondary: 197 40% 88%;
+    --secondary-foreground: 215 62% 18%;
 
-    --muted: 186 15% 95%;
-    --muted-foreground: 186 8% 45%;
+    --muted: 197 30% 92%;
+    --muted-foreground: 230 17% 55%;
 
-    --accent: 186 35% 88%;
-    --accent-foreground: 186 100% 25%;
+    --accent: 230 17% 55%;
+    --accent-foreground: 197 65% 94%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive-foreground: 197 65% 94%;
 
-    --border: 186 20% 88%;
-    --input: 186 20% 92%;
-    --ring: 186 100% 31%;
+    --border: 230 10% 85%;
+    --input: 197 30% 90%;
+    --ring: 215 62% 18%;
 
-    /* Scientific theme colors */
-    --scientific-teal: 186 100% 31%;
-    --scientific-blue: 213 85% 27%;
-    --scientific-light: 186 25% 96%;
-    --scientific-accent: 171 82% 35%;
+    /* Custom theme colors based on your palette */
+    --scientific-teal: 215 62% 18%;
+    --scientific-blue: 215 62% 18%;
+    --scientific-light: 197 65% 94%;
+    --scientific-accent: 230 17% 55%;
+    --manatee: 240 4% 56%;
 
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--scientific-teal)), hsl(var(--scientific-accent)));
@@ -71,41 +72,41 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 215 62% 10%;
+    --foreground: 197 65% 94%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 215 62% 12%;
+    --card-foreground: 197 65% 94%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 215 62% 12%;
+    --popover-foreground: 197 65% 94%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 197 65% 94%;
+    --primary-foreground: 215 62% 18%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 215 30% 20%;
+    --secondary-foreground: 197 65% 94%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 215 30% 20%;
+    --muted-foreground: 230 17% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 230 17% 25%;
+    --accent-foreground: 197 65% 94%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 197 65% 94%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 215 30% 20%;
+    --input: 215 30% 20%;
+    --ring: 197 65% 85%;
+    --sidebar-background: 215 62% 8%;
+    --sidebar-foreground: 197 65% 94%;
+    --sidebar-primary: 215 62% 48%;
+    --sidebar-primary-foreground: 197 65% 94%;
+    --sidebar-accent: 215 30% 15%;
+    --sidebar-accent-foreground: 197 65% 94%;
+    --sidebar-border: 215 30% 15%;
+    --sidebar-ring: 197 65% 85%;
   }
 }
 
