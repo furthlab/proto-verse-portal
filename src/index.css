@@ -8,32 +8,32 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 197 65% 94%;
+    --background: 0 0% 100%;
     --foreground: 215 62% 18%;
 
-    --card: 197 65% 94%;
+    --card: 0 0% 100%;
     --card-foreground: 215 62% 18%;
 
-    --popover: 197 65% 94%;
+    --popover: 0 0% 100%;
     --popover-foreground: 215 62% 18%;
 
     --primary: 215 62% 18%;
-    --primary-foreground: 197 65% 94%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 197 40% 88%;
+    --secondary: 197 65% 94%;
     --secondary-foreground: 215 62% 18%;
 
     --muted: 197 30% 92%;
     --muted-foreground: 230 17% 55%;
 
     --accent: 230 17% 55%;
-    --accent-foreground: 197 65% 94%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 197 65% 94%;
+    --destructive-foreground: 0 0% 100%;
 
     --border: 230 10% 85%;
-    --input: 197 30% 90%;
+    --input: 0 0% 98%;
     --ring: 215 62% 18%;
 
     /* Custom theme colors based on your palette */
@@ -42,11 +42,12 @@ All colors MUST be HSL.
     --scientific-light: 197 65% 94%;
     --scientific-accent: 230 17% 55%;
     --manatee: 240 4% 56%;
+    --white-ice: 197 65% 94%;
 
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--scientific-teal)), hsl(var(--scientific-accent)));
-    --gradient-hero: linear-gradient(180deg, hsl(var(--background)), hsl(var(--scientific-light)));
-    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--scientific-light)));
+    --gradient-hero: linear-gradient(180deg, hsl(var(--background)), hsl(var(--white-ice)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--white-ice)));
 
     /* Shadows */
     --shadow-scientific: 0 4px 20px -4px hsl(var(--scientific-teal) / 0.15);

@@ -59,6 +59,7 @@ export default {
 					accent: 'hsl(var(--scientific-accent))'
 				},
 				manatee: 'hsl(var(--manatee))',
+				'white-ice': 'hsl(var(--white-ice))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
