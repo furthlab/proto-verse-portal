@@ -11,7 +11,7 @@ const GenomeBrowser = () => {
       name: 'volvox',
       sequence: {
         type: 'ReferenceSequenceTrack',
-        trackId: 'volvox_refseq',
+        trackId: 'volvox_refseq_assembly',
         adapter: {
           type: 'TwoBitAdapter',
           twoBitLocation: {
@@ -51,6 +51,27 @@ const GenomeBrowser = () => {
         },
       },
     ],
+    defaultSession: {
+      name: 'Default session',
+      view: {
+        id: 'linearGenomeView',
+        type: 'LinearGenomeView',
+        tracks: [
+          {
+            id: 'volvox_refseq',
+            type: 'ReferenceSequenceTrack',
+            configuration: 'volvox_refseq',
+            displays: [
+              {
+                id: 'volvox_refseq-LinearReferenceSequenceDisplay',
+                type: 'LinearReferenceSequenceDisplay',
+                configuration: 'volvox_refseq-LinearReferenceSequenceDisplay',
+              },
+            ],
+          },
+        ],
+      },
+    },
     location: 'ctgA:1100..1165',
   });
 
