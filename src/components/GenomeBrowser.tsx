@@ -23,6 +23,20 @@ const GenomeBrowser = () => {
     },
     tracks: [
       {
+        type: 'ReferenceSequenceTrack',
+        trackId: 'volvox_refseq',
+        name: 'Reference sequence (volvox)',
+        assemblyNames: ['volvox'],
+        category: ['Reference'],
+        adapter: {
+          type: 'TwoBitAdapter',
+          twoBitLocation: {
+            uri: 'https://jbrowse.org/genomes/volvox/volvox.2bit',
+            locationType: 'UriLocation',
+          },
+        },
+      },
+      {
         type: 'FeatureTrack',
         trackId: 'volvox_gff_genes',
         name: 'Genes',
@@ -37,7 +51,7 @@ const GenomeBrowser = () => {
         },
       },
     ],
-    location: 'ctgA:1105..4000',
+    location: 'ctgA:1100..1165',
   });
 
   return (
@@ -63,7 +77,7 @@ const GenomeBrowser = () => {
       <div className="container mx-auto max-w-6xl px-4 mt-6">
         <div className="text-center">
           <p className="text-sm text-muted-foreground">
-            Currently viewing: Volvox Test Data - ctgA:1105..4000
+            Currently viewing: Volvox Test Data - ctgA:1100..1165 (65bp zoom)
           </p>
         </div>
       </div>
