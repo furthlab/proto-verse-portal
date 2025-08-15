@@ -82,7 +82,7 @@ const OrganismGrid = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {organisms.map((organism) => (
-            <Card key={organism.id} className="group hover:shadow-scientific transition-all duration-300 bg-gradient-card border-border/50">
+            <Card key={organism.id} className="group hover:shadow-scientific transition-all duration-300 bg-card border-border/50">
               <CardHeader className="pb-3">
                 <div className="flex items-start justify-between">
                   <div className="text-3xl mb-2">{organism.image}</div>
