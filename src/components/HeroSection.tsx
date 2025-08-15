@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search, Database, Microscope, FlaskConical } from "lucide-react";
-import parameciumHero from "@/assets/paramecium-hero.jpg";
+import heroImage from "/lovable-uploads/72c654b8-fea6-47f3-bfcc-a83e660c7ec4.png";
 
 const HeroSection = () => {
   return (
@@ -44,8 +44,8 @@ const HeroSection = () => {
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-scientific">
               <img 
-                src={parameciumHero} 
-                alt="Paramecium microscopic view"
+                src={heroImage} 
+                alt="Microscopic organism with highlighted nucleus"
                 className="w-full h-[400px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-scientific-teal/20 to-transparent"></div>
