@@ -13,7 +13,7 @@ const HeroSection = () => {
             <div className="space-y-4">
               <h1 className="text-4xl lg:text-6xl font-bold text-foreground leading-tight">
                 Non-
-                <span className="text-transparent bg-gradient-primary bg-clip-text"> Synaptic</span>
+                <span className="text-transparent bg-gradient-primary bg-clip-text">Synaptic</span>
                 <br />
                 Memory
               </h1>
