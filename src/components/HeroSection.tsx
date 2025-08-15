@@ -18,8 +18,8 @@ const HeroSection = () => {
                 Memory
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Comprehensive database and research portal for non-traditional learning model organisms. 
-                Discover, analyze, and contribute to cutting-edge neuroscience research.
+                A bioinformatic resource for using non-traditional model organisms 
+                in the search for non-synaptic memory.
               </p>
             </div>
 
