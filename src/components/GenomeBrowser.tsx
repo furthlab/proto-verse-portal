@@ -7,32 +7,11 @@ import {
 
 const GenomeBrowser = () => {
   const state = createViewState({
-    assemblies: [
-      {
-        name: 'volvox',
-        sequence: {
-          type: 'ReferenceSequenceTrack',
-          trackId: 'volvox_assembly_sequence',
-          adapter: {
-            type: 'TwoBitAdapter',
-            twoBitLocation: {
-              uri: 'https://jbrowse.org/genomes/volvox/volvox.2bit',
-              locationType: 'UriLocation',
-            },
-          },
-        },
-        chromSizesLocation: {
-          uri: 'https://jbrowse.org/genomes/volvox/volvox.chrom.sizes',
-          locationType: 'UriLocation',
-        },
-      },
-    ],
-    tracks: [
-      {
+    assembly: {
+      name: 'volvox',
+      sequence: {
         type: 'ReferenceSequenceTrack',
         trackId: 'volvox_refseq',
-        name: 'Reference sequence',
-        assemblyNames: ['volvox'],
         adapter: {
           type: 'TwoBitAdapter',
           twoBitLocation: {
@@ -41,6 +20,8 @@ const GenomeBrowser = () => {
           },
         },
       },
+    },
+    tracks: [
       {
         type: 'FeatureTrack',
         trackId: 'volvox_genes',
@@ -62,16 +43,9 @@ const GenomeBrowser = () => {
         type: 'LinearGenomeView',
         tracks: [
           {
-            id: 'track_volvox_refseq',
-            type: 'ReferenceSequenceTrack',
-            configuration: 'volvox_refseq',
-            displays: [
-              {
-                id: 'display_volvox_refseq',
-                type: 'LinearReferenceSequenceDisplay',
-                configuration: 'volvox_refseq-LinearReferenceSequenceDisplay',
-              },
-            ],
+            id: 'track_volvox_genes',
+            type: 'FeatureTrack',
+            configuration: 'volvox_genes',
           },
         ],
       },
