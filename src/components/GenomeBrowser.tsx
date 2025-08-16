@@ -33,28 +33,20 @@ const GenomeBrowser = () => {
           },
         },
       },
-      {
-        type: 'ReferenceSequenceTrack',
-        trackId: 'volvox_refseq',
-        name: 'Reference sequence',
-        assemblyNames: ['volvox'],
-        adapter: {
-          type: 'TwoBitAdapter',
-          twoBitLocation: {
-            uri: 'https://jbrowse.org/genomes/volvox/volvox.2bit',
-            locationType: 'UriLocation',
-          },
-        },
-      },
     ],
     defaultSession: {
       name: 'Default session',
       view: {
         id: 'linearGenomeView',
         type: 'LinearGenomeView',
+        offsetPx: 0,
+        bpPerPx: 0.1,
         tracks: [
-          { id: 'track_volvox_genes', type: 'FeatureTrack', configuration: 'volvox_genes' },
-          { id: 'track_volvox_refseq', type: 'ReferenceSequenceTrack', configuration: 'volvox_refseq' },
+          { 
+            id: 'track_volvox_genes', 
+            type: 'FeatureTrack', 
+            configuration: 'volvox_genes'
+          },
         ],
       },
     },
