@@ -11,28 +11,17 @@ const GenomeBrowser = () => {
       {
         name: 'volvox',
         sequence: {
-          regions: [
-            { name: 'ctgA', start: 0, end: 138849 },
-            { name: 'ctgB', start: 0, end: 121243 },
-            // add other contigs if needed
-          ],
+          adapter: {
+            type: 'TwoBitAdapter',
+            twoBitLocation: {
+              uri: 'https://jbrowse.org/genomes/volvox/volvox.2bit',
+              locationType: 'UriLocation',
+            },
+          },
         },
       },
     ],
     tracks: [
-      {
-        type: 'ReferenceSequenceTrack',
-        trackId: 'volvox_refseq',
-        name: 'Reference sequence',
-        assemblyNames: ['volvox'],
-        adapter: {
-          type: 'TwoBitAdapter',
-          twoBitLocation: {
-            uri: 'https://jbrowse.org/genomes/volvox/volvox.2bit',
-            locationType: 'UriLocation',
-          },
-        },
-      },
       {
         type: 'FeatureTrack',
         trackId: 'volvox_genes',
@@ -53,11 +42,6 @@ const GenomeBrowser = () => {
         id: 'linearGenomeView',
         type: 'LinearGenomeView',
         tracks: [
-          {
-            id: 'track_volvox_refseq',
-            type: 'ReferenceSequenceTrack',
-            configuration: 'volvox_refseq',
-          },
           {
             id: 'track_volvox_genes',
             type: 'FeatureTrack',
@@ -82,13 +66,13 @@ const GenomeBrowser = () => {
           </p>
         </div>
       </div>
-      
+
       <div className="w-full bg-background border-y shadow-sm overflow-hidden">
         <div className="h-96">
           <JBrowseLinearGenomeView viewState={state} />
         </div>
       </div>
-      
+
       <div className="container mx-auto max-w-6xl px-4 mt-6">
         <div className="text-center">
           <p className="text-sm text-muted-foreground">
