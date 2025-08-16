@@ -25,9 +25,8 @@ const GenomeBrowser = () => {
       {
         type: 'ReferenceSequenceTrack',
         trackId: 'volvox_refseq',
-        name: 'Reference sequence (volvox)',
+        name: 'Reference sequence',
         assemblyNames: ['volvox'],
-        category: ['Reference'],
         adapter: {
           type: 'TwoBitAdapter',
           twoBitLocation: {
@@ -38,10 +37,9 @@ const GenomeBrowser = () => {
       },
       {
         type: 'FeatureTrack',
-        trackId: 'volvox_gff_genes',
+        trackId: 'volvox_genes',
         name: 'Genes',
         assemblyNames: ['volvox'],
-        category: ['Genes'],
         adapter: {
           type: 'Gff3Adapter',
           gffLocation: {
@@ -58,12 +56,12 @@ const GenomeBrowser = () => {
         type: 'LinearGenomeView',
         tracks: [
           {
-            id: 'volvox_refseq',
+            id: 'track_volvox_refseq',
             type: 'ReferenceSequenceTrack',
             configuration: 'volvox_refseq',
             displays: [
               {
-                id: 'volvox_refseq-LinearReferenceSequenceDisplay',
+                id: 'display_volvox_refseq',
                 type: 'LinearReferenceSequenceDisplay',
                 configuration: 'volvox_refseq-LinearReferenceSequenceDisplay',
               },
