@@ -7,21 +7,22 @@ import {
 
 const GenomeBrowser = () => {
   const state = createViewState({
-    assembly: {
-      name: 'volvox',
-      assemblyName: 'volvox', 
-      sequence: {
-        type: 'ReferenceSequenceTrack',
-        trackId: 'volvox_assembly_sequence',
-        adapter: {
-          type: 'TwoBitAdapter',
-          twoBitLocation: {
-            uri: 'https://jbrowse.org/genomes/volvox/volvox.2bit',
-            locationType: 'UriLocation',
+    assemblies: [
+      {
+        name: 'volvox',
+        sequence: {
+          type: 'ReferenceSequenceTrack',
+          trackId: 'volvox_assembly_sequence',
+          adapter: {
+            type: 'TwoBitAdapter',
+            twoBitLocation: {
+              uri: 'https://jbrowse.org/genomes/volvox/volvox.2bit',
+              locationType: 'UriLocation',
+            },
           },
         },
       },
-    },
+    ],
     tracks: [
       {
         type: 'ReferenceSequenceTrack',
