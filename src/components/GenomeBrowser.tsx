@@ -41,6 +41,8 @@ const GenomeBrowser = () => {
       view: {
         id: 'linearGenomeView',
         type: 'LinearGenomeView',
+        offsetPx: 0,
+        bpPerPx: 0.5,
         tracks: [
           {
             id: 'track_volvox_genes',
