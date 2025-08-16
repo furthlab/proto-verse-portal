@@ -29,4 +29,28 @@ const GenomeBrowser = () => {
           type: 'Gff3Adapter',
           gffLocation: {
             uri: 'https://jbrowse.org/genomes/volvox/volvox.gff3',
-            locationTyp
+            locationType: 'UriLocation',
+          },
+        },
+      },
+    ],
+    defaultSession: {
+      name: 'Default session',
+      view: {
+        id: 'linearGenomeView',
+        type: 'LinearGenomeView',
+        offsetPx: 0,
+        bpPerPx: 0.1,
+      },
+    },
+    location: 'ctgA:1100..1165',
+  });
+
+  return (
+    <div style={{ height: '500px' }}>
+      <JBrowseLinearGenomeView viewState={state} />
+    </div>
+  );
+};
+
+export default GenomeBrowser;
