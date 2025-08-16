@@ -9,6 +9,7 @@ const GenomeBrowser = () => {
   const state = createViewState({
     assembly: {
       name: 'volvox',
+      assemblyName: 'volvox', 
       sequence: {
         type: 'ReferenceSequenceTrack',
         trackId: 'volvox_assembly_sequence',
