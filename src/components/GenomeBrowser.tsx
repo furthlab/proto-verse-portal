@@ -7,17 +7,32 @@ import {
 
 const GenomeBrowser = () => {
   const state = createViewState({
-    assembly: {
-      name: 'volvox',
-      adapter: {
-        type: 'TwoBitAdapter',
-        twoBitLocation: {
-          uri: 'https://jbrowse.org/genomes/volvox/volvox.2bit',
-          locationType: 'UriLocation',
+    assemblies: [
+      {
+        name: 'volvox',
+        sequence: {
+          regions: [
+            { name: 'ctgA', start: 0, end: 138849 },
+            { name: 'ctgB', start: 0, end: 121243 },
+            // add other contigs if needed
+          ],
         },
       },
-    },
+    ],
     tracks: [
+      {
+        type: 'ReferenceSequenceTrack',
+        trackId: 'volvox_refseq',
+        name: 'Reference sequence',
+        assemblyNames: ['volvox'],
+        adapter: {
+          type: 'TwoBitAdapter',
+          twoBitLocation: {
+            uri: 'https://jbrowse.org/genomes/volvox/volvox.2bit',
+            locationType: 'UriLocation',
+          },
+        },
+      },
       {
         type: 'FeatureTrack',
         trackId: 'volvox_genes',
@@ -38,6 +53,11 @@ const GenomeBrowser = () => {
         id: 'linearGenomeView',
         type: 'LinearGenomeView',
         tracks: [
+          {
+            id: 'track_volvox_refseq',
+            type: 'ReferenceSequenceTrack',
+            configuration: 'volvox_refseq',
+          },
           {
             id: 'track_volvox_genes',
             type: 'FeatureTrack',
