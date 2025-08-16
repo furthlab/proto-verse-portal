@@ -7,11 +7,17 @@ import {
 
 const GenomeBrowser = () => {
   const state = createViewState({
-    assembly: {
-      name: 'volvox',
-      sequence: {
+    assemblies: [
+      {
+        name: 'volvox', // only define the name, no adapter here
+      },
+    ],
+    tracks: [
+      {
         type: 'ReferenceSequenceTrack',
         trackId: 'volvox_refseq',
+        name: 'Reference sequence',
+        assemblyNames: ['volvox'],
         adapter: {
           type: 'TwoBitAdapter',
           twoBitLocation: {
@@ -20,8 +26,6 @@ const GenomeBrowser = () => {
           },
         },
       },
-    },
-    tracks: [
       {
         type: 'FeatureTrack',
         trackId: 'volvox_genes',
@@ -41,13 +45,18 @@ const GenomeBrowser = () => {
       view: {
         id: 'linearGenomeView',
         type: 'LinearGenomeView',
-        offsetPx: 0,
-        bpPerPx: 0.5,
         tracks: [
           {
-            id: 'track_volvox_genes',
-            type: 'FeatureTrack',
-            configuration: 'volvox_genes',
+            id: 'track_volvox_refseq',
+            type: 'ReferenceSequenceTrack',
+            configuration: 'volvox_refseq',
+            displays: [
+              {
+                id: 'display_volvox_refseq',
+                type: 'LinearReferenceSequenceDisplay',
+                configuration: 'volvox_refseq-LinearReferenceSequenceDisplay',
+              },
+            ],
           },
         ],
       },
