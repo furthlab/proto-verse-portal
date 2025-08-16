@@ -11,7 +11,7 @@ const GenomeBrowser = () => {
       name: 'volvox',
       sequence: {
         type: 'ReferenceSequenceTrack',
-        trackId: 'volvox_refseq_assembly',
+        trackId: 'volvox_refseq',
         adapter: {
           type: 'TwoBitAdapter',
           twoBitLocation: {
