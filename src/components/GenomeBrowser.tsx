@@ -21,6 +21,10 @@ const GenomeBrowser = () => {
             },
           },
         },
+        chromSizesLocation: {
+          uri: 'https://jbrowse.org/genomes/volvox/volvox.chrom.sizes',
+          locationType: 'UriLocation',
+        },
       },
     ],
     tracks: [
