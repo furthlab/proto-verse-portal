@@ -19,31 +19,7 @@ const GenomeBrowser = () => {
         },
       },
     },
-    tracks: [
-      {
-        type: 'FeatureTrack',
-        trackId: 'volvox_genes',
-        name: 'Genes',
-        assemblyNames: ['volvox'],
-        adapter: {
-          type: 'Gff3Adapter',
-          gffLocation: {
-            uri: 'https://jbrowse.org/genomes/volvox/volvox.gff3',
-            locationType: 'UriLocation',
-          },
-        },
-      },
-    ],
-    defaultSession: {
-      name: 'Default session',
-      view: {
-        id: 'linearGenomeView',
-        type: 'LinearGenomeView',
-        offsetPx: 0,
-        bpPerPx: 0.1,
-      },
-    },
-    location: 'ctgA:1100..1165',
+    tracks: [],
   });
 
   return (
