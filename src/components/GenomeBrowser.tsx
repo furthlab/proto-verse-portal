@@ -7,20 +7,18 @@ import {
 
 const GenomeBrowser = () => {
   const state = createViewState({
-    assemblies: [
-      {
-        name: 'volvox',
-        sequence: {
-          adapter: {
-            type: 'TwoBitAdapter',
-            twoBitLocation: {
-              uri: 'https://jbrowse.org/genomes/volvox/volvox.2bit',
-              locationType: 'UriLocation',
-            },
+    assembly: {
+      name: 'volvox',
+      sequence: {
+        adapter: {
+          type: 'TwoBitAdapter',
+          twoBitLocation: {
+            uri: 'https://jbrowse.org/genomes/volvox/volvox.2bit',
+            locationType: 'UriLocation',
           },
         },
       },
-    ],
+    },
     tracks: [
       {
         type: 'FeatureTrack',
@@ -35,6 +33,19 @@ const GenomeBrowser = () => {
           },
         },
       },
+      {
+        type: 'ReferenceSequenceTrack',
+        trackId: 'volvox_refseq',
+        name: 'Reference sequence',
+        assemblyNames: ['volvox'],
+        adapter: {
+          type: 'TwoBitAdapter',
+          twoBitLocation: {
+            uri: 'https://jbrowse.org/genomes/volvox/volvox.2bit',
+            locationType: 'UriLocation',
+          },
+        },
+      },
     ],
     defaultSession: {
       name: 'Default session',
@@ -42,11 +53,8 @@ const GenomeBrowser = () => {
         id: 'linearGenomeView',
         type: 'LinearGenomeView',
         tracks: [
-          {
-            id: 'track_volvox_genes',
-            type: 'FeatureTrack',
-            configuration: 'volvox_genes',
-          },
+          { id: 'track_volvox_genes', type: 'FeatureTrack', configuration: 'volvox_genes' },
+          { id: 'track_volvox_refseq', type: 'ReferenceSequenceTrack', configuration: 'volvox_refseq' },
         ],
       },
     },
@@ -54,33 +62,9 @@ const GenomeBrowser = () => {
   });
 
   return (
-    <section className="py-16 bg-muted/30">
-      <div className="container mx-auto max-w-6xl px-4 mb-8">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold text-foreground mb-4">
-            Interactive Genome Browser
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-            Explore genomic features, genes, and annotations with our integrated JBrowse2 genome browser.
-            Navigate through chromosomes and discover the intricate details of genetic information.
-          </p>
-        </div>
-      </div>
-
-      <div className="w-full bg-background border-y shadow-sm overflow-hidden">
-        <div className="h-96">
-          <JBrowseLinearGenomeView viewState={state} />
-        </div>
-      </div>
-
-      <div className="container mx-auto max-w-6xl px-4 mt-6">
-        <div className="text-center">
-          <p className="text-sm text-muted-foreground">
-            Currently viewing: Volvox Test Data - ctgA:1100..1165 (65bp zoom)
-          </p>
-        </div>
-      </div>
-    </section>
+    <div style={{ height: '500px' }}>
+      <JBrowseLinearGenomeView viewState={state} />
+    </div>
   );
 };
 
