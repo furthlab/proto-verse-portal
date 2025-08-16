@@ -8,33 +8,101 @@ import {
 const GenomeBrowser = () => {
   const state = createViewState({
     assembly: {
-      name: 'GRCh38',
+      name: 'volvox',
       sequence: {
+        type: 'ReferenceSequenceTrack',
+        trackId: 'volvox_refseq_assembly',
         adapter: {
-          type: 'BgzipFastaAdapter',
-          fastaLocation: {
-            uri: 'https://jbrowse.org/genomes/GRCh38/fasta/GRCh38.fa.gz',
-            locationType: 'UriLocation',
-          },
-          faiLocation: {
-            uri: 'https://jbrowse.org/genomes/GRCh38/fasta/GRCh38.fa.gz.fai',
-            locationType: 'UriLocation',
-          },
-          gziLocation: {
-            uri: 'https://jbrowse.org/genomes/GRCh38/fasta/GRCh38.fa.gz.gzi',
+          type: 'TwoBitAdapter',
+          twoBitLocation: {
+            uri: 'https://jbrowse.org/genomes/volvox/volvox.2bit',
             locationType: 'UriLocation',
           },
         },
       },
     },
-    tracks: [],
-    location: '1:100,987,269..100,987,368',
+    tracks: [
+      {
+        type: 'ReferenceSequenceTrack',
+        trackId: 'volvox_refseq',
+        name: 'Reference sequence (volvox)',
+        assemblyNames: ['volvox'],
+        category: ['Reference'],
+        adapter: {
+          type: 'TwoBitAdapter',
+          twoBitLocation: {
+            uri: 'https://jbrowse.org/genomes/volvox/volvox.2bit',
+            locationType: 'UriLocation',
+          },
+        },
+      },
+      {
+        type: 'FeatureTrack',
+        trackId: 'volvox_gff_genes',
+        name: 'Genes',
+        assemblyNames: ['volvox'],
+        category: ['Genes'],
+        adapter: {
+          type: 'Gff3Adapter',
+          gffLocation: {
+            uri: 'https://jbrowse.org/genomes/volvox/volvox.gff3',
+            locationType: 'UriLocation',
+          },
+        },
+      },
+    ],
+    defaultSession: {
+      name: 'Default session',
+      view: {
+        id: 'linearGenomeView',
+        type: 'LinearGenomeView',
+        tracks: [
+          {
+            id: 'volvox_refseq',
+            type: 'ReferenceSequenceTrack',
+            configuration: 'volvox_refseq',
+            displays: [
+              {
+                id: 'volvox_refseq-LinearReferenceSequenceDisplay',
+                type: 'LinearReferenceSequenceDisplay',
+                configuration: 'volvox_refseq-LinearReferenceSequenceDisplay',
+              },
+            ],
+          },
+        ],
+      },
+    },
+    location: 'ctgA:1100..1165',
   });
 
   return (
-    <div style={{ height: '500px' }}>
-      <JBrowseLinearGenomeView viewState={state} />
-    </div>
+    <section className="py-16 bg-muted/30">
+      <div className="container mx-auto max-w-6xl px-4 mb-8">
+        <div className="text-center">
+          <h2 className="text-3xl font-bold text-foreground mb-4">
+            Interactive Genome Browser
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+            Explore genomic features, genes, and annotations with our integrated JBrowse2 genome browser.
+            Navigate through chromosomes and discover the intricate details of genetic information.
+          </p>
+        </div>
+      </div>
+      
+      <div className="w-full bg-background border-y shadow-sm overflow-hidden">
+        <div className="h-96">
+          <JBrowseLinearGenomeView viewState={state} />
+        </div>
+      </div>
+      
+      <div className="container mx-auto max-w-6xl px-4 mt-6">
+        <div className="text-center">
+          <p className="text-sm text-muted-foreground">
+            Currently viewing: Volvox Test Data - ctgA:1100..1165 (65bp zoom)
+          </p>
+        </div>
+      </div>
+    </section>
   );
 };
 
