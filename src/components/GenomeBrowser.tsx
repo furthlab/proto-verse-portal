@@ -50,9 +50,6 @@ const GenomeBrowser = () => {
         {
           id: 'linearView',
           type: 'LinearGenomeView',
-          displayedRegions: [
-            { refName: 'scaffold_0011', start: 43248, end: 46019 },
-          ],
         },
       ],
     },
