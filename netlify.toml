@@ -1,7 +1,7 @@
 [build]
-  command = "npm run build"
+  command = "NODE_OPTIONS='--max_old_space_size=4096' npm run build"
   publish = "dist"
-  
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
