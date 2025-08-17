@@ -2,19 +2,20 @@ import React from 'react';
 import { JBrowseLinearGenomeView, createViewState } from '@jbrowse/react-linear-genome-view';
 import { PluginManager } from '@jbrowse/core/PluginManager';
 
-// Import the plugins
+// Plugins
+import LinearGenomeViewPlugin from '@jbrowse/plugin-linear-genome-view';
 import Gff3Plugin from '@jbrowse/plugin-gff3';
 import FastaPlugin from '@jbrowse/plugin-fasta';
-import LinearGenomeViewPlugin from '@jbrowse/plugin-linear-genome-view';
-
-// Create the plugin manager and load plugins
-const pluginManager = new PluginManager();
-pluginManager.addPlugin(new FastaPlugin());
-pluginManager.addPlugin(new Gff3Plugin());
-pluginManager.addPlugin(new LinearGenomeViewPlugin());
 
 const GenomeBrowser = () => {
-  const state = createViewState({
+  // Initialize plugin manager and load plugins
+  const pluginManager = new PluginManager();
+  pluginManager.addPlugin(new LinearGenomeViewPlugin());
+  pluginManager.addPlugin(new FastaPlugin());
+  pluginManager.addPlugin(new Gff3Plugin());
+
+  // Create JBrowse view state
+  const viewState = createViewState({
     assembly: {
       name: 'caudatum',
       sequence: {
@@ -60,8 +61,11 @@ const GenomeBrowser = () => {
   });
 
   return (
-    <div className="h-[600px]">
-      <JBrowseLinearGenomeView viewState={state} />
+    <div className="h-[700px] border rounded-lg shadow-md">
+      <div className="bg-gray-100 p-2 text-center font-semibold">
+        Paramecium caudatum Genome Browser
+      </div>
+      <JBrowseLinearGenomeView viewState={viewState} />
     </div>
   );
 };
