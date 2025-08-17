@@ -32,18 +32,35 @@ const GenomeBrowser = () => {
         assemblyNames: ['caudatum'],
         category: ['Annotations'],
         adapter: {
-          type: 'Gff3Adapter',
-          gffLocation: {
+          type: 'Gff3TabixAdapter',
+          gffGzLocation: {
             uri: 'https://3mg010.s3.us-east-1.amazonaws.com/genomes/caudatum_43c3d_annotation_v1.sorted.gff3.gz',
             locationType: 'UriLocation',
+          },
+          index: {
+            location: {
+              uri: 'https://3mg010.s3.us-east-1.amazonaws.com/genomes/caudatum_43c3d_annotation_v1.sorted.gff3.gz.tbi',
+              locationType: 'UriLocation',
+            },
+            indexType: 'TBI',
           },
         },
       },
     ],
     defaultSession: {
       name: 'Default session',
-    },
-    location: 'scaffold_0011:43248..46019',
+      views: [
+        {
+          id: 'linearView',
+          type: 'LinearGenomeView',
+          displayedRegions: [
+            { refName: 'scaffold_0011', start: 43248, end: 46019 },
+          ],
+          tracks: ['caudatum_annotation'],
+        },
+      ],
+    }
+    //location: 'scaffold_0011:43248..46019',
   });
 
   return (
