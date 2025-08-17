@@ -87,7 +87,7 @@ const EvolutionaryTree = () => {
 
   const filteredOrganisms = treeData.filter(organism => {
     const matchesSearch = organism.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         organism.commonName.toLowerCase().includes(searchTerm.toLowerCase());
+                          organism.commonName.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesPhylum = selectedPhylum === "all" || organism.phylum === selectedPhylum;
     return matchesSearch && matchesPhylum;
   });
@@ -123,7 +123,7 @@ const EvolutionaryTree = () => {
               onChange={(e) => setSelectedPhylum(e.target.value)}
               className="h-12 px-4 border border-border bg-background/80 rounded-md text-foreground"
             >
-              <option value="all">All Phylums</option>
+              <option value="all">All Phyla</option>
               {phylums.map(phylum => (
                 <option key={phylum} value={phylum}>{phylum}</option>
               ))}
@@ -140,12 +140,13 @@ const EvolutionaryTree = () => {
               <GitBranch className="w-6 h-6 text-primary" />
               Phylogenetic Tree
             </h2>
-            <img src="./assets/evo_devo.png"
-            
+            <img 
+              src="./assets/evo_devo.png" 
+              alt="Evolutionary tree diagram" 
+              className="rounded-lg shadow-md"
+            />
           </div>
         </div>
-
-          
       </section>
 
       <Footer />
