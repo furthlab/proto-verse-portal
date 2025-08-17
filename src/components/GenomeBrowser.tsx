@@ -6,18 +6,21 @@ const GenomeBrowser = () => {
     assembly: {
       name: 'caudatum',
       sequence: {
+        type: 'ReferenceSequenceTrack',
+        trackId: 'caudatum_refseq',
         adapter: {
-          type: 'FastaAdapter',
+          type: 'BgzipFastaAdapter',
           fastaLocation: {
             uri: 'https://3mg010.s3.us-east-1.amazonaws.com/genomes/caudatum_43c3d_assembly_v1.fa.gz',
             locationType: 'UriLocation',
           },
-          index: {
-            location: {
-              uri: 'https://3mg010.s3.us-east-1.amazonaws.com/genomes/caudatum_43c3d_assembly_v1.fa.gz.tbi',
-              locationType: 'UriLocation',
-            },
-            indexType: 'TBI',
+          faiLocation: {
+            uri: 'https://3mg010.s3.us-east-1.amazonaws.com/genomes/caudatum_43c3d_assembly_v1.fa.gz.fai',
+            locationType: 'UriLocation',
+          },
+          gziLocation: {
+            uri: 'https://3mg010.s3.us-east-1.amazonaws.com/genomes/caudatum_43c3d_assembly_v1.fa.gz.gzi',
+            locationType: 'UriLocation',
           },
         },
       },
@@ -50,6 +53,12 @@ const GenomeBrowser = () => {
         {
           id: 'linearView',
           type: 'LinearGenomeView',
+          tracks: [
+            {
+              id: 'caudatum_annotation',
+              type: 'FeatureTrack',
+            },
+          ],
         },
       ],
     },
