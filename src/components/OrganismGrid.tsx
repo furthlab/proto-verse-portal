@@ -12,7 +12,7 @@ const organisms = [
     researchAreas: ["Learning", "Memory", "Behavior"],
     studyCount: 120,
     geneCount: "32K",
-    image: "🦠",
+    image: "🔬",
     taxonId: 5885
   },
   {
@@ -23,7 +23,7 @@ const organisms = [
     researchAreas: ["Learning", "Memory", "Behavior"],
     studyCount: 342,
     geneCount: "40K",
-    image: "🦠",
+    image: "🔬",
     taxonId: 5888
   },
   {
@@ -53,7 +53,7 @@ const organisms = [
     name: "Mus musculus",
     commonName: "Mouse",
     description: "Primary mammalian model for genetics, physiology, and disease studies",
-    researchAreas: ["Genetics", "Disease", "Development"],
+    researchAreas: ["Genetics", "Disease", "Neuroscience", "Development"],
     studyCount: 30000,
     geneCount: "23K",
     image: "🐭",
@@ -78,7 +78,7 @@ const organisms = [
     researchAreas: ["Regeneration", "Development", "Stem Cells"],
     studyCount: 600,
     geneCount: "20K",
-    image: "🌿",
+    image: "🌊",
     taxonId: 6071
   },
   {
@@ -100,7 +100,7 @@ const organisms = [
     researchAreas: ["Development", "Regeneration", "Evolution"],
     studyCount: 230,
     geneCount: "15K",
-    image: "🌊",
+    image: "🪼",
     taxonId: 27923
   },
   {
@@ -122,7 +122,7 @@ const organisms = [
     researchAreas: ["Neuroscience", "Learning", "Behavior"],
     studyCount: 950,
     geneCount: "20K",
-    image: "🐚",
+    image: "🐌",
     taxonId: 6500
   }
 ];
