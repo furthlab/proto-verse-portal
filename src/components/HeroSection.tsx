@@ -2,8 +2,27 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search, Database, Microscope, FlaskConical } from "lucide-react";
 import heroImage from "/lovable-uploads/72c654b8-fea6-47f3-bfcc-a83e660c7ec4.png";
+import { useState } from "react";
 
-const HeroSection = () => {
+interface HeroSectionProps {
+  onSearch: (query: string) => void;
+}
+
+const HeroSection = ({ onSearch }: HeroSectionProps) => {
+  const [searchQuery, setSearchQuery] = useState("")
+
+  const handleSearch = () => {
+    if (searchQuery.trim()) {
+      onSearch(searchQuery.trim())
+    }
+  }
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      handleSearch()
+    }
+  }
+
   return (
     <section className="bg-gradient-hero py-20 px-4">
       <div className="container mx-auto max-w-6xl">
@@ -30,9 +49,12 @@ const HeroSection = () => {
                 <Input 
                   placeholder="Search genes (e.g., BRCA1, TP53, EGFR)..." 
                   className="pl-10 h-12 border-border bg-background/80"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onKeyPress={handleKeyPress}
                 />
               </div>
-              <Button size="lg" className="h-12 px-6">
+              <Button size="lg" className="h-12 px-6" onClick={handleSearch}>
                 <Search className="w-4 h-4 mr-2" />
                 Search Genes
               </Button>
