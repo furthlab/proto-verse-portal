@@ -7,17 +7,27 @@ import {
 
 const GenomeBrowser = () => {
   const state = createViewState({
-    assemblies: [
-      {
-        name: 'volvox', // only define the name, no adapter here
+    assembly: {
+      name: 'volvox',
+      sequence: {
+        type: 'ReferenceSequenceTrack',
+        trackId: 'volvox_refseq_assembly',
+        adapter: {
+          type: 'TwoBitAdapter',
+          twoBitLocation: {
+            uri: 'https://jbrowse.org/genomes/volvox/volvox.2bit',
+            locationType: 'UriLocation',
+          },
+        },
       },
-    ],
+    },
     tracks: [
       {
         type: 'ReferenceSequenceTrack',
         trackId: 'volvox_refseq',
-        name: 'Reference sequence',
+        name: 'Reference sequence (volvox)',
         assemblyNames: ['volvox'],
+        category: ['Reference'],
         adapter: {
           type: 'TwoBitAdapter',
           twoBitLocation: {
@@ -28,9 +38,10 @@ const GenomeBrowser = () => {
       },
       {
         type: 'FeatureTrack',
-        trackId: 'volvox_genes',
+        trackId: 'volvox_gff_genes',
         name: 'Genes',
         assemblyNames: ['volvox'],
+        category: ['Genes'],
         adapter: {
           type: 'Gff3Adapter',
           gffLocation: {
@@ -47,12 +58,12 @@ const GenomeBrowser = () => {
         type: 'LinearGenomeView',
         tracks: [
           {
-            id: 'track_volvox_refseq',
+            id: 'volvox_refseq',
             type: 'ReferenceSequenceTrack',
             configuration: 'volvox_refseq',
             displays: [
               {
-                id: 'display_volvox_refseq',
+                id: 'volvox_refseq-LinearReferenceSequenceDisplay',
                 type: 'LinearReferenceSequenceDisplay',
                 configuration: 'volvox_refseq-LinearReferenceSequenceDisplay',
               },
