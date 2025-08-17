@@ -136,7 +136,7 @@ const OrganismGrid = () => {
             Featured Model Organisms
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Explore our comprehensive database of non-traditional learning models, 
+            Explore our comprehensive database of learning model organisms, 
             from single-celled organisms to complex multicellular systems.
           </p>
         </div>
