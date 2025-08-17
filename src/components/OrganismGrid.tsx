@@ -6,63 +6,124 @@ import { Eye, BookOpen, Database, ArrowRight } from "lucide-react";
 const organisms = [
   {
     id: 1,
-    name: "Paramecium tetraurelia",
+    name: "Paramecium caudatum",
     commonName: "Paramecium",
-    description: "Single-celled ciliate known for habituation and sensitization studies",
+    description: "Single-celled ciliate used in learning, memory, and behavior studies",
     researchAreas: ["Learning", "Memory", "Behavior"],
-    studyCount: 342,
-    geneCount: "40K",
-    image: "🦠"
+    studyCount: 120,
+    geneCount: "32K",
+    image: "🔬",
+    taxonId: 5885
   },
   {
     id: 2,
-    name: "Stentor coeruleus",
-    commonName: "Trumpet Animalcule", 
-    description: "Large ciliate with complex behavioral patterns and regenerative abilities",
-    researchAreas: ["Regeneration", "Behavior", "Morphology"],
-    studyCount: 156,
-    geneCount: "27K",
-    image: "🔬"
+    name: "Paramecium tetraurelia",
+    commonName: "Paramecium",
+    description: "Model ciliate known for habituation and sensitization studies",
+    researchAreas: ["Learning", "Memory", "Behavior"],
+    studyCount: 342,
+    geneCount: "40K",
+    image: "🔬",
+    taxonId: 5888
   },
   {
     id: 3,
+    name: "Drosophila melanogaster",
+    commonName: "Fruit Fly",
+    description: "Genetic model for development, neuroscience, and behavior studies",
+    researchAreas: ["Genetics", "Development", "Neuroscience"],
+    studyCount: 15000,
+    geneCount: "14K",
+    image: "🪰",
+    taxonId: 7227
+  },
+  {
+    id: 4,
+    name: "Homo sapiens",
+    commonName: "Human",
+    description: "Model for human biology, disease research, and genomics",
+    researchAreas: ["Genetics", "Disease", "Medicine"],
+    studyCount: 50000,
+    geneCount: "20K",
+    image: "🧬",
+    taxonId: 9606
+  },
+  {
+    id: 5,
+    name: "Mus musculus",
+    commonName: "Mouse",
+    description: "Primary mammalian model for genetics, physiology, and disease studies",
+    researchAreas: ["Genetics", "Disease", "Neuroscience", "Development"],
+    studyCount: 30000,
+    geneCount: "23K",
+    image: "🐭",
+    taxonId: 10090
+  },
+  {
+    id: 6,
     name: "Physarum polycephalum",
     commonName: "Slime Mold",
     description: "Acellular slime mold demonstrating problem-solving and network optimization",
     researchAreas: ["Cognition", "Networks", "Problem-solving"],
     studyCount: 428,
     geneCount: "11K",
-    image: "🍄"
+    image: "🍄",
+    taxonId: 5791
   },
   {
-    id: 4,
-    name: "Tetrahymena thermophila", 
-    commonName: "Tetrahymena",
-    description: "Model ciliate for studying cellular processes and behavior",
-    researchAreas: ["Cell Biology", "Genetics", "Behavior"],
-    studyCount: 892,
-    geneCount: "25K",
-    image: "🔬"
+    id: 7,
+    name: "Hydra vulgaris",
+    commonName: "Hydra",
+    description: "Freshwater cnidarian used to study regeneration and stem cell biology",
+    researchAreas: ["Regeneration", "Development", "Stem Cells"],
+    studyCount: 600,
+    geneCount: "20K",
+    image: "🌊",
+    taxonId: 6071
   },
   {
-    id: 5,
-    name: "Blepharisma japonicum",
-    commonName: "Blepharisma",
-    description: "Photosensitive ciliate used in behavioral and photobiology research",
-    researchAreas: ["Photobiology", "Behavior", "Sensory"],
-    studyCount: 203,
-    geneCount: "18K", 
-    image: "✨"
+    id: 8,
+    name: "Caenorhabditis elegans",
+    commonName: "Nematode",
+    description: "Model organism for genetics, development, and neurobiology",
+    researchAreas: ["Genetics", "Development", "Neuroscience"],
+    studyCount: 18000,
+    geneCount: "20K",
+    image: "🪱",
+    taxonId: 6239
   },
   {
-    id: 6,
-    name: "Dictyostelium discoideum",
-    commonName: "Social Amoeba",
-    description: "Social amoeba demonstrating collective behavior and decision-making",
-    researchAreas: ["Social Behavior", "Development", "Signaling"],
-    studyCount: 1247,
-    geneCount: "12K",
-    image: "🦠"
+    id: 9,
+    name: "Mnemiopsis leidyi",
+    commonName: "Comb Jelly",
+    description: "Marine ctenophore used for studying development and regenerative biology",
+    researchAreas: ["Development", "Regeneration", "Evolution"],
+    studyCount: 230,
+    geneCount: "15K",
+    image: "🪼",
+    taxonId: 27923
+  },
+  {
+    id: 10,
+    name: "Stentor coeruleus",
+    commonName: "Trumpet Animalcule",
+    description: "Large ciliate with complex behavioral patterns and regenerative abilities",
+    researchAreas: ["Regeneration", "Behavior", "Morphology"],
+    studyCount: 156,
+    geneCount: "27K",
+    image: "🔬",
+    taxonId: 5963
+  },
+  {
+    id: 11,
+    name: "Aplysia californica",
+    commonName: "Sea Hare",
+    description: "Marine mollusk used in neuroscience for learning and memory studies",
+    researchAreas: ["Neuroscience", "Learning", "Behavior"],
+    studyCount: 950,
+    geneCount: "20K",
+    image: "🐌",
+    taxonId: 6500
   }
 ];
 
