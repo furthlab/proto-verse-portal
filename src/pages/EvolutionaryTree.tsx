@@ -140,105 +140,12 @@ const EvolutionaryTree = () => {
               <GitBranch className="w-6 h-6 text-primary" />
               Phylogenetic Tree
             </h2>
+            <img src="./assets/evo_devo.png"
             
-            <div className="bg-gradient-card rounded-lg p-6 border border-border/50">
-              <div className="space-y-4">
-                {/* Ciliophora Branch */}
-                <div className="border-l-2 border-scientific-teal pl-4">
-                  <h3 className="text-lg font-semibold text-foreground mb-2">Ciliophora</h3>
-                  <div className="space-y-2 ml-4">
-                    {filteredOrganisms
-                      .filter(org => org.phylum === "Ciliophora")
-                      .map(organism => (
-                        <div key={organism.id} className="flex items-center gap-2 text-sm">
-                          <div className="w-2 h-2 bg-scientific-teal rounded-full"></div>
-                          <span className="text-foreground font-medium">{organism.name}</span>
-                          <span className="text-muted-foreground">({organism.commonName})</span>
-                        </div>
-                      ))}
-                  </div>
-                </div>
-
-                {/* Amoebozoa Branch */}
-                <div className="border-l-2 border-primary pl-4">
-                  <h3 className="text-lg font-semibold text-foreground mb-2">Amoebozoa</h3>
-                  <div className="space-y-2 ml-4">
-                    {filteredOrganisms
-                      .filter(org => org.phylum === "Amoebozoa")
-                      .map(organism => (
-                        <div key={organism.id} className="flex items-center gap-2 text-sm">
-                          <div className="w-2 h-2 bg-primary rounded-full"></div>
-                          <span className="text-foreground font-medium">{organism.name}</span>
-                          <span className="text-muted-foreground">({organism.commonName})</span>
-                        </div>
-                      ))}
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
-
-          {/* Organism Details Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredOrganisms.map((organism) => (
-              <Card key={organism.id} className="group hover:shadow-scientific transition-all duration-300">
-                <CardHeader className="pb-3">
-                  <div className="flex items-start justify-between">
-                    <Badge variant="secondary" className="text-xs mb-2">
-                      {organism.phylum}
-                    </Badge>
-                    <Badge variant="outline" className="text-xs">
-                      {organism.studyCount} studies
-                    </Badge>
-                  </div>
-                  <CardTitle className="text-lg group-hover:text-primary transition-colors">
-                    {organism.name}
-                  </CardTitle>
-                  <CardDescription className="text-sm text-muted-foreground">
-                    {organism.commonName}
-                  </CardDescription>
-                </CardHeader>
-                
-                <CardContent className="space-y-4">
-                  <div className="grid grid-cols-2 gap-4 text-sm">
-                    <div>
-                      <span className="text-muted-foreground">Genome Size:</span>
-                      <div className="font-medium text-foreground">{organism.genomeSize}</div>
-                    </div>
-                    <div>
-                      <span className="text-muted-foreground">Gene Count:</span>
-                      <div className="font-medium text-foreground">{organism.geneCount}</div>
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <span className="text-muted-foreground text-sm">Classification:</span>
-                    <div className="text-sm text-foreground">{organism.class}</div>
-                  </div>
-
-                  <div className="flex gap-2 pt-2">
-                    <Button variant="outline" size="sm" className="flex-1">
-                      <Eye className="w-4 h-4 mr-1" />
-                      View Details
-                    </Button>
-                    <Button variant="ghost" size="sm">
-                      <Download className="w-4 h-4" />
-                    </Button>
-                    <Button variant="ghost" size="sm">
-                      <Info className="w-4 h-4" />
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {filteredOrganisms.length === 0 && (
-            <div className="text-center py-12">
-              <p className="text-muted-foreground text-lg">No organisms found matching your criteria.</p>
-            </div>
-          )}
         </div>
+
+          
       </section>
 
       <Footer />
