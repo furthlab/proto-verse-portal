@@ -1,5 +1,5 @@
-import React from 'react';
-import { JBrowseLinearGenomeView, createViewState } from '@jbrowse/react-linear-genome-view';
+import React from 'react'
+import { JBrowseLinearGenomeView, createViewState } from '@jbrowse/react-linear-genome-view'
 
 const GenomeBrowser = () => {
   const viewState = createViewState({
@@ -12,15 +12,12 @@ const GenomeBrowser = () => {
           type: 'BgzipFastaAdapter',
           fastaLocation: {
             uri: 'https://3mg010.s3.us-east-1.amazonaws.com/genomes/caudatum_43c3d_assembly_v1.fa.gz',
-            locationType: 'UriLocation',
           },
           faiLocation: {
             uri: 'https://3mg010.s3.us-east-1.amazonaws.com/genomes/caudatum_43c3d_assembly_v1.fa.gz.fai',
-            locationType: 'UriLocation',
           },
           gziLocation: {
             uri: 'https://3mg010.s3.us-east-1.amazonaws.com/genomes/caudatum_43c3d_assembly_v1.fa.gz.gzi',
-            locationType: 'UriLocation',
           },
         },
       },
@@ -35,34 +32,17 @@ const GenomeBrowser = () => {
           type: 'Gff3TabixAdapter',
           gffGzLocation: {
             uri: 'https://3mg010.s3.us-east-1.amazonaws.com/genomes/caudatum_43c3d_annotation_v1.sorted.gff3.gz',
-            locationType: 'UriLocation',
           },
           index: {
             location: {
               uri: 'https://3mg010.s3.us-east-1.amazonaws.com/genomes/caudatum_43c3d_annotation_v1.sorted.gff3.gz.tbi',
-              locationType: 'UriLocation',
             },
-            indexType: 'TBI',
           },
         },
       },
     ],
-    defaultSession: {
-      name: 'Default session',
-      views: [
-        {
-          id: 'linearView',
-          type: 'LinearGenomeView',
-          tracks: [
-            {
-              id: 'caudatum_annotation',
-              type: 'FeatureTrack',
-            },
-          ],
-        },
-      ],
-    },
-  });
+    location: 'scaffold_1:1-10000', // <-- THIS automatically creates a LinearGenomeView
+  })
 
   return (
     <div className="h-[700px] border rounded-lg shadow-md">
@@ -71,7 +51,7 @@ const GenomeBrowser = () => {
       </div>
       <JBrowseLinearGenomeView viewState={viewState} />
     </div>
-  );
-};
+  )
+}
 
-export default GenomeBrowser;
+export default GenomeBrowser
