@@ -19,22 +19,45 @@ const Index = () => {
     setSearchTerm(query)
     
     try {
+      // First, let's check the table structure
+      console.log('Searching for:', query)
+      
+      // Get first few rows to understand the table structure
+      const { data: sampleData, error: sampleError } = await supabase
+        .from('annotations')
+        .select('*')
+        .limit(1)
+      
+      if (sampleError) {
+        console.error('Sample query error:', sampleError)
+      } else {
+        console.log('Sample data structure:', sampleData)
+      }
+
+      // Try different possible column names based on what you mentioned
       const { data, error } = await supabase
         .from('annotations')
         .select('*')
-        .or(`attributes.ilike.%${query}%,type.ilike.%${query}%,genome.ilike.%${query}%`)
+        .or(`gene_symb.ilike.%${query}%,feature_key.ilike.%${query}%,type.ilike.%${query}%,genome.ilike.%${query}%`)
         .limit(50)
 
       if (error) {
+        console.error('Search error:', error)
         throw error
       }
 
+      console.log('Search results:', data)
       setSearchResults(data || [])
       
       if (data && data.length > 0) {
         toast({
           title: "Search Complete",
           description: `Found ${data.length} annotation${data.length !== 1 ? 's' : ''} matching "${query}"`,
+        })
+      } else {
+        toast({
+          title: "No Results",
+          description: `No annotations found for "${query}"`,
         })
       }
     } catch (error) {
