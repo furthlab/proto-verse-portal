@@ -27,7 +27,7 @@ const GenomeBrowser = () => {
         type: 'FeatureTrack',
         trackId: 'caudatum_annotation',
         name: 'Genome annotation',
-        assemblyNames: ['caudatum'],
+        assemblyNames: ['Paramecium caudatum'],
         adapter: {
           type: 'Gff3TabixAdapter',
           gffGzLocation: {
