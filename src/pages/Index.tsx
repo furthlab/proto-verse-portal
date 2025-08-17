@@ -19,26 +19,11 @@ const Index = () => {
     setSearchTerm(query)
     
     try {
-      // First, let's check the table structure
-      console.log('Searching for:', query)
-      
-      // Get first few rows to understand the table structure
-      const { data: sampleData, error: sampleError } = await supabase
-        .from('annotations')
-        .select('*')
-        .limit(1)
-      
-      if (sampleError) {
-        console.error('Sample query error:', sampleError)
-      } else {
-        console.log('Sample data structure:', sampleData)
-      }
-
-      // Try different possible column names based on what you mentioned
+      // Search in the correct table with correct column names
       const { data, error } = await supabase
-        .from('annotations')
+        .from('features')
         .select('*')
-        .or(`gene_symb.ilike.%${query}%,feature_key.ilike.%${query}%,type.ilike.%${query}%,genome.ilike.%${query}%`)
+        .or(`gene_symbol.ilike.%${query}%,feature_key.ilike.%${query}%,type.ilike.%${query}%,genome_name.ilike.%${query}%`)
         .limit(50)
 
       if (error) {

@@ -47,10 +47,10 @@ const SearchResults = ({ results, searchTerm, isLoading }: SearchResultsProps) =
 
   // Group results by genome
   const resultsByGenome = results.reduce((acc, result) => {
-    if (!acc[result.genome]) {
-      acc[result.genome] = []
+    if (!acc[result.genome_name]) {
+      acc[result.genome_name] = []
     }
-    acc[result.genome].push(result)
+    acc[result.genome_name].push(result)
     return acc
   }, {} as Record<string, AnnotationFeature[]>)
 
@@ -99,7 +99,8 @@ const SearchResults = ({ results, searchTerm, isLoading }: SearchResultsProps) =
                           </span>
                         </div>
                         <p className="text-sm text-muted-foreground mt-1 truncate max-w-md">
-                          {feature.attributes}
+                          {feature.gene_symbol && `Gene: ${feature.gene_symbol} | `}
+                          {feature.feature_key} | Chr: {feature.chromosome}
                         </p>
                       </div>
                     </div>
