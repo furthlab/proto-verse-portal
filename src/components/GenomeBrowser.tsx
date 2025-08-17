@@ -53,28 +53,6 @@ const GenomeBrowser = () => {
           displayedRegions: [
             { refName: 'scaffold_0011', start: 43248, end: 46019 },
           ],
-          tracks: [
-            {
-              type: 'FeatureTrack',
-              trackId: 'caudatum_annotation',
-              name: 'Annotations (GFF3)',
-              assemblyNames: ['caudatum'],
-              adapter: {
-                type: 'Gff3TabixAdapter',
-                gffGzLocation: {
-                  uri: 'https://3mg010.s3.us-east-1.amazonaws.com/genomes/caudatum_43c3d_annotation_v1.sorted.gff3.gz',
-                  locationType: 'UriLocation',
-                },
-                index: {
-                  location: {
-                    uri: 'https://3mg010.s3.us-east-1.amazonaws.com/genomes/caudatum_43c3d_annotation_v1.sorted.gff3.gz.tbi',
-                    locationType: 'UriLocation',
-                  },
-                  indexType: 'TBI',
-                },
-              },
-            },
-          ],
         },
       ],
     },
