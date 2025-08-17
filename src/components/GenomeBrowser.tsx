@@ -4,7 +4,7 @@ import { JBrowseLinearGenomeView, createViewState } from '@jbrowse/react-linear-
 const GenomeBrowser = () => {
   const viewState = createViewState({
     assembly: {
-      name: 'caudatum',
+      name: 'Paramecium caudatum',
       sequence: {
         type: 'ReferenceSequenceTrack',
         trackId: 'caudatum_refseq',
@@ -26,7 +26,7 @@ const GenomeBrowser = () => {
       {
         type: 'FeatureTrack',
         trackId: 'caudatum_annotation',
-        name: 'Annotations (GFF3)',
+        name: 'Genome annotation',
         assemblyNames: ['caudatum'],
         adapter: {
           type: 'Gff3TabixAdapter',
