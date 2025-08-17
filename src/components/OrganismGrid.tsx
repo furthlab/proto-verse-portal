@@ -148,7 +148,7 @@ const OrganismGrid = () => {
                 <div className="flex items-start justify-between">
                   <div className="text-3xl mb-2">{organism.image}</div>
                   <Badge variant="secondary" className="text-xs">
-                    {organism.transCount} lines
+                    {organism.transCount} distributable transgenic lines
                   </Badge>
                 </div>
                 <CardTitle className="text-lg group-hover:text-primary transition-colors">
