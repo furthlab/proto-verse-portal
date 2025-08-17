@@ -8,15 +8,21 @@ import {
 const GenomeBrowser = () => {
   const state = createViewState({
     assembly: {
-      name: 'volvox',
+      name: 'paramecium_caudatum',
       sequence: {
         type: 'ReferenceSequenceTrack',
-        trackId: 'volvox_refseq_assembly',
+        trackId: 'pc_refseq_assembly',
         adapter: {
-          type: 'TwoBitAdapter',
-          twoBitLocation: {
-            uri: 'https://jbrowse.org/genomes/volvox/volvox.2bit',
+          type: 'FastaAdapter', // Use FastaAdapter for .fa.gz files
+          fastaLocation: {
+            uri: 'https://3mg010.s3.us-east-1.amazonaws.com/genomes/caudatum_43c3d_assembly_v1.fa.gz',
             locationType: 'UriLocation',
+          },
+          index: {
+            location: {
+              uri: 'https://3mg010.s3.us-east-1.amazonaws.com/genomes/caudatum_43c3d_assembly_v1.fa.gz.fai', // optional if you have an index
+              locationType: 'UriLocation',
+            },
           },
         },
       },
@@ -24,29 +30,41 @@ const GenomeBrowser = () => {
     tracks: [
       {
         type: 'ReferenceSequenceTrack',
-        trackId: 'volvox_refseq',
-        name: 'Reference sequence (volvox)',
-        assemblyNames: ['volvox'],
+        trackId: 'pc_refseq',
+        name: 'Reference sequence (Paramecium caudatum)',
+        assemblyNames: ['paramecium_caudatum'],
         category: ['Reference'],
         adapter: {
-          type: 'TwoBitAdapter',
-          twoBitLocation: {
-            uri: 'https://jbrowse.org/genomes/volvox/volvox.2bit',
+          type: 'FastaAdapter',
+          fastaLocation: {
+            uri: 'https://3mg010.s3.us-east-1.amazonaws.com/genomes/caudatum_43c3d_assembly_v1.fa.gz',
             locationType: 'UriLocation',
+          },
+          index: {
+            location: {
+              uri: 'https://3mg010.s3.us-east-1.amazonaws.com/genomes/caudatum_43c3d_assembly_v1.fa.gz.fai',
+              locationType: 'UriLocation',
+            },
           },
         },
       },
       {
         type: 'FeatureTrack',
-        trackId: 'volvox_gff_genes',
+        trackId: 'pc_gff_genes',
         name: 'Genes',
-        assemblyNames: ['volvox'],
+        assemblyNames: ['paramecium_caudatum'],
         category: ['Genes'],
         adapter: {
-          type: 'Gff3Adapter',
-          gffLocation: {
-            uri: 'https://jbrowse.org/genomes/volvox/volvox.gff3',
+          type: 'Gff3TabixAdapter', // if your GFF3 is bgzipped & tabix-indexed
+          gffGzLocation: {
+            uri: 'https://3mg010.s3.us-east-1.amazonaws.com/genomes/caudatum_43c3d_annotation_v1.sorted.gff3.gz',
             locationType: 'UriLocation',
+          },
+          index: {
+            location: {
+              uri: 'https://3mg010.s3.us-east-1.amazonaws.com/genomes/caudatum_43c3d_annotation_v1.sorted.gff3.gz.tbi', // tabix index
+              locationType: 'UriLocation',
+            },
           },
         },
       },
@@ -58,21 +76,21 @@ const GenomeBrowser = () => {
         type: 'LinearGenomeView',
         tracks: [
           {
-            id: 'volvox_refseq',
+            id: 'pc_refseq',
             type: 'ReferenceSequenceTrack',
-            configuration: 'volvox_refseq',
+            configuration: 'pc_refseq',
             displays: [
               {
-                id: 'volvox_refseq-LinearReferenceSequenceDisplay',
+                id: 'pc_refseq-LinearReferenceSequenceDisplay',
                 type: 'LinearReferenceSequenceDisplay',
-                configuration: 'volvox_refseq-LinearReferenceSequenceDisplay',
+                configuration: 'pc_refseq-LinearReferenceSequenceDisplay',
               },
             ],
           },
         ],
       },
     },
-    location: 'ctgA:1100..1165',
+    location: 'scaffold_0011:43248..46019', // adjust to a Paramecium contig if desired
   });
 
   return (
@@ -83,8 +101,7 @@ const GenomeBrowser = () => {
             Interactive Genome Browser
           </h2>
           <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-            Explore genomic features, genes, and annotations with our integrated JBrowse2 genome browser.
-            Navigate through chromosomes and discover the intricate details of genetic information.
+            Explore genomic features, genes, and annotations of Paramecium caudatum.
           </p>
         </div>
       </div>
@@ -98,7 +115,7 @@ const GenomeBrowser = () => {
       <div className="container mx-auto max-w-6xl px-4 mt-6">
         <div className="text-center">
           <p className="text-sm text-muted-foreground">
-            Currently viewing: Volvox Test Data - ctgA:1100..1165 (65bp zoom)
+            Currently viewing: Paramecium caudatum - ctgA:1100..1165
           </p>
         </div>
       </div>

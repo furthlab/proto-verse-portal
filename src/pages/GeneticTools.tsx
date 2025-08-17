@@ -334,7 +334,7 @@ export default function GeneticTools() {
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <header className="mb-8">
       <h1 className="text-3xl font-bold tracking-tight text-foreground">Genetic tools</h1>
-      <h2 className="text-3xl font-bold tracking-tight text-foreground">Transgenic strains</h2>
+      <h2 className="text-xl font-bold tracking-tight text-foreground">Transgenic strains</h2>
       <p className="text-muted-foreground mt-2 max-w-2xl">
         We have developed a set of calcium and voltage indicators.
         </p>
@@ -344,7 +344,7 @@ export default function GeneticTools() {
               className="rounded-lg h-96"
             />
 
-        <h2 className="text-3xl font-bold tracking-tight text-foreground">Codon optimizer</h2>
+        <h2 className="text-xl font-bold tracking-tight text-foreground">Codon optimizer</h2>
         <p className="text-muted-foreground mt-2 max-w-2xl">
           Optimize coding sequences for target organisms using species-specific codon usage. Supports human, mouse, fly, and Paramecium (ciliate code).
         </p>
