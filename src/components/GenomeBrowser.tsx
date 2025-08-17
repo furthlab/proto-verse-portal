@@ -75,7 +75,7 @@ const GenomeBrowser = () => {
   })
 
   return (
-    <div className="h-[700px] border rounded-lg shadow-md">
+    <div className="h-[400px] border rounded-lg shadow-md">
       <div className="bg-gray-100 p-2 text-center font-semibold">
         Interactive Genome Browser
       </div>
