@@ -68,7 +68,9 @@ const Index = () => {
       />
       <GenomeBrowser />
       <OrganismGrid />
+      {/*
       <ResearchTools />
+    */}
       <Footer />
     </>
   );
