@@ -6,8 +6,6 @@ const GenomeBrowser = () => {
     assembly: {
       name: 'caudatum',
       sequence: {
-        type: 'ReferenceSequenceTrack',
-        trackId: 'caudatum_refseq',
         adapter: {
           type: 'FastaAdapter',
           fastaLocation: {
@@ -59,8 +57,7 @@ const GenomeBrowser = () => {
           tracks: ['caudatum_annotation'],
         },
       ],
-    }
-    //location: 'scaffold_0011:43248..46019',
+    },
   });
 
   return (
