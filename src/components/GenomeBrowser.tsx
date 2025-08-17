@@ -1,20 +1,7 @@
 import React from 'react';
 import { JBrowseLinearGenomeView, createViewState } from '@jbrowse/react-linear-genome-view';
-import { PluginManager } from '@jbrowse/core/PluginManager';
-
-// Plugins
-import LinearGenomeViewPlugin from '@jbrowse/plugin-linear-genome-view';
-import Gff3Plugin from '@jbrowse/plugin-gff3';
-import FastaPlugin from '@jbrowse/plugin-fasta';
 
 const GenomeBrowser = () => {
-  // Initialize plugin manager and load plugins
-  const pluginManager = new PluginManager();
-  pluginManager.addPlugin(new LinearGenomeViewPlugin());
-  pluginManager.addPlugin(new FastaPlugin());
-  pluginManager.addPlugin(new Gff3Plugin());
-
-  // Create JBrowse view state
   const viewState = createViewState({
     assembly: {
       name: 'caudatum',
@@ -57,7 +44,6 @@ const GenomeBrowser = () => {
       name: 'Default session',
     },
     location: 'scaffold_0011:43248..46019',
-    pluginManager,
   });
 
   return (
