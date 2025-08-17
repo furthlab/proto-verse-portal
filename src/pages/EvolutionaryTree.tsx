@@ -5,80 +5,10 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Search, GitBranch, Eye, Download, Info } from "lucide-react";
 import Footer from "@/components/Footer";
+import evoDevoImg from "@/assets/evo_devo.png"; // <-- Import your image
 
 const treeData = [
-  {
-    id: 1,
-    name: "Paramecium tetraurelia",
-    commonName: "Paramecium",
-    phylum: "Ciliophora",
-    class: "Oligohymenophorea",
-    genomeSize: "72 Mb",
-    geneCount: "40,000",
-    studyCount: 342,
-    level: 0,
-    children: []
-  },
-  {
-    id: 2,
-    name: "Tetrahymena thermophila",
-    commonName: "Tetrahymena", 
-    phylum: "Ciliophora",
-    class: "Oligohymenophorea",
-    genomeSize: "104 Mb",
-    geneCount: "25,000",
-    studyCount: 892,
-    level: 0,
-    children: []
-  },
-  {
-    id: 3,
-    name: "Stentor coeruleus",
-    commonName: "Trumpet Animalcule",
-    phylum: "Ciliophora", 
-    class: "Heterotrichea",
-    genomeSize: "158 Mb",
-    geneCount: "27,000",
-    studyCount: 156,
-    level: 0,
-    children: []
-  },
-  {
-    id: 4,
-    name: "Blepharisma japonicum",
-    commonName: "Blepharisma",
-    phylum: "Ciliophora",
-    class: "Heterotrichea", 
-    genomeSize: "95 Mb",
-    geneCount: "18,000",
-    studyCount: 203,
-    level: 0,
-    children: []
-  },
-  {
-    id: 5,
-    name: "Physarum polycephalum",
-    commonName: "Slime Mold",
-    phylum: "Amoebozoa",
-    class: "Myxogastria",
-    genomeSize: "23 Mb", 
-    geneCount: "11,000",
-    studyCount: 428,
-    level: 1,
-    children: []
-  },
-  {
-    id: 6,
-    name: "Dictyostelium discoideum",
-    commonName: "Social Amoeba",
-    phylum: "Amoebozoa",
-    class: "Dictyostelia",
-    genomeSize: "34 Mb",
-    geneCount: "12,000", 
-    studyCount: 1247,
-    level: 1,
-    children: []
-  }
+  // ... your data stays the same
 ];
 
 const EvolutionaryTree = () => {
@@ -134,14 +64,13 @@ const EvolutionaryTree = () => {
 
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-7xl">
-          {/* Tree Visualization */}
           <div className="mb-12">
             <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-2">
               <GitBranch className="w-6 h-6 text-primary" />
               Phylogenetic Tree
             </h2>
             <img 
-              src="./assets/evo_devo.png" 
+              src={evoDevoImg} 
               alt="Evolutionary tree diagram" 
               className="rounded-lg shadow-md"
             />
