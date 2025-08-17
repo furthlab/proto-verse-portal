@@ -41,14 +41,43 @@ const GenomeBrowser = () => {
         },
       },
     ],
-    // Open on scaffold_0001 at 1-10000
-    location: 'scaffold_0001:338,696..338,760', 
+    // Open directly on scaffold_0001 region
+    location: 'scaffold_0001:338696..338760',
+    defaultSession: {
+      name: 'Caudatum Genome Session',
+      view: {
+        id: 'linearGenomeView',
+        type: 'LinearGenomeView',
+        tracks: [
+          {
+            type: 'ReferenceSequenceTrack',
+            configuration: 'caudatum_refseq',
+            displays: [
+              {
+                type: 'LinearReferenceSequenceDisplay',
+                configuration: 'caudatum_refseq-LinearReferenceSequenceDisplay',
+              },
+            ],
+          },
+          {
+            type: 'FeatureTrack',
+            configuration: 'caudatum_annotation',
+            displays: [
+              {
+                type: 'LinearBasicDisplay',
+                configuration: 'caudatum_annotation-LinearBasicDisplay',
+              },
+            ],
+          },
+        ],
+      },
+    },
   })
 
   return (
     <div className="h-[700px] border rounded-lg shadow-md">
       <div className="bg-gray-100 p-2 text-center font-semibold">
-        Paramecium caudatum Genome Browser
+        Interactive Genome Browser
       </div>
       <JBrowseLinearGenomeView viewState={viewState} />
     </div>
