@@ -41,7 +41,8 @@ const GenomeBrowser = () => {
         },
       },
     ],
-    location: 'scaffold_1:1-10000', // <-- THIS automatically creates a LinearGenomeView
+    // Open on scaffold_0001 at 1-10000
+    location: 'scaffold_0001:338,696..338,760', 
   })
 
   return (
