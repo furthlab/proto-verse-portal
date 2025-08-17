@@ -5,6 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { Switch } from "@/components/ui/switch";
+import indicatorLinesImg from "@/assets/transgenic_strains.svg"; // <-- Import your image
 import {
   Select,
   SelectContent,
@@ -337,6 +338,11 @@ export default function GeneticTools() {
       <p className="text-muted-foreground mt-2 max-w-2xl">
         We have developed a set of calcium and voltage indicators.
         </p>
+        <img 
+              src={indicatorLinesImg} 
+              alt="Calcium and voltage indicators" 
+              className="rounded-lg shadow-md"
+            />
 
         <h1 className="text-3xl font-bold tracking-tight text-foreground">Codon optimizer</h1>
         <p className="text-muted-foreground mt-2 max-w-2xl">

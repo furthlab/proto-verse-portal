@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 397.8 224.8">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke-dasharray: 1.1 1.1;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11, .cls-12, .cls-13, .cls-14, .cls-15, .cls-16, .cls-17, .cls-18 {
+        fill: none;
+      }
+
+      .cls-1, .cls-4, .cls-19, .cls-8, .cls-15 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1, .cls-4, .cls-8 {
+        stroke: #696b6b;
+        stroke-width: .5px;
+      }
+
+      .cls-20, .cls-21, .cls-22, .cls-23, .cls-24, .cls-25, .cls-26, .cls-27, .cls-28, .cls-29, .cls-30 {
+        font-family: Helvetica, Helvetica;
+      }
+
+      .cls-20, .cls-21, .cls-22, .cls-23, .cls-24, .cls-26, .cls-27, .cls-28, .cls-29, .cls-31, .cls-30 {
+        font-size: 6px;
+      }
+
+      .cls-20, .cls-28 {
+        fill: #723f2d;
+      }
+
+      .cls-2, .cls-3, .cls-5, .cls-6, .cls-7, .cls-32, .cls-33, .cls-34, .cls-9, .cls-35, .cls-36, .cls-37, .cls-11, .cls-12, .cls-38, .cls-13, .cls-14, .cls-16, .cls-17, .cls-39, .cls-40, .cls-41, .cls-42, .cls-26, .cls-43, .cls-28, .cls-31, .cls-30, .cls-18, .cls-44 {
+        opacity: .7;
+      }
+
+      .cls-2, .cls-3, .cls-34, .cls-41, .cls-42 {
+        stroke: #5d99a3;
+      }
+
+      .cls-2, .cls-7, .cls-12, .cls-13, .cls-17, .cls-40 {
+        stroke-width: .9px;
+      }
+
+      .cls-3, .cls-6, .cls-11, .cls-14, .cls-16, .cls-41, .cls-18 {
+        stroke-width: .9px;
+      }
+
+      .cls-45 {
+        font-family: Helvetica-Bold, Helvetica;
+        font-size: 8px;
+        font-weight: 700;
+      }
+
+      .cls-21 {
+        fill: #c178a0;
+      }
+
+      .cls-46 {
+        font-family: Helvetica-Oblique, Helvetica;
+        font-style: oblique;
+      }
+
+      .cls-5 {
+        stroke: #b36d90;
+      }
+
+      .cls-5, .cls-9 {
+        stroke-width: .9px;
+      }
+
+      .cls-22 {
+        fill: #a071c9;
+      }
+
+      .cls-19 {
+        fill: #ccc;
+        stroke: #8c8c8c;
+        stroke-width: .7px;
+      }
+
+      .cls-6, .cls-7, .cls-9 {
+        stroke: #528b76;
+      }
+
+      .cls-32 {
+        fill: #c6c9d1;
+      }
+
+      .cls-33 {
+        fill: #c7b0e3;
+      }
+
+      .cls-34, .cls-37, .cls-41, .cls-42 {
+        fill: #85dae9;
+      }
+
+      .cls-8 {
+        stroke-dasharray: 1 1;
+      }
+
+      .cls-35 {
+        fill: #faac61;
+      }
+
+      .cls-24 {
+        fill: #8c8c8c;
+      }
+
+      .cls-10 {
+        stroke-width: .8px;
+      }
+
+      .cls-10, .cls-15 {
+        stroke: #000;
+      }
+
+      .cls-47, .cls-43 {
+        fill: #ff9ccd;
+      }
+
+      .cls-36 {
+        fill: #84b0dc;
+      }
+
+      .cls-11 {
+        stroke: #8b8d92;
+      }
+
+      .cls-12 {
+        stroke: #af7844;
+      }
+
+      .cls-38 {
+        fill: #ffef86;
+      }
+
+      .cls-13, .cls-14 {
+        stroke: #8b7b9f;
+      }
+
+      .cls-15 {
+        stroke-width: .9px;
+      }
+
+      .cls-16, .cls-17 {
+        stroke: #5c7b9a;
+      }
+
+      .cls-39 {
+        stroke-width: .9px;
+      }
+
+      .cls-39, .cls-40 {
+        fill: #f58a5e;
+        stroke: #ac6142;
+      }
+
+      .cls-42 {
+        stroke-width: .9px;
+      }
+
+      .cls-26 {
+        fill: #314251;
+      }
+
+      .cls-27 {
+        fill: #696b6b;
+      }
+
+      .cls-29 {
+        fill: #b5a800;
+      }
+
+      .cls-31 {
+        fill: #4a7a7f;
+      }
+
+      .cls-30 {
+        fill: #51495e;
+      }
+
+      .cls-18 {
+        stroke: #b3a75e;
+      }
+
+      .cls-44 {
+        fill: #75c6a9;
+      }
+    </style>
+  </defs>
+  <!-- Generator: Adobe Illustrator 28.7.8, SVG Export Plug-In . SVG Version: 1.2.0 Build 200)  -->
+  <g>
+    <g id="Layer_1">
+      <g>
+        <g>
+          <polyline class="cls-44" points="192.3 37.2 198 31.5 192.3 25.9 114.3 25.9 114.3 37.2"/>
+          <polyline class="cls-6" points="192.3 37.2 198 31.5 192.3 25.9"/>
+          <line class="cls-6" x1="114.3" y1="25.9" x2="114.3" y2="37.2"/>
+          <path class="cls-6" d="M114.3,37.2h78M114.3,25.9h78"/>
+          <path class="cls-37" d="M101.6,37.2"/>
+          <path class="cls-3" d="M22.9,37.2"/>
+          <path class="cls-3" d="M22.9,25.9"/>
+          <path class="cls-41" d="M22.9,25.9h78.7v11.3H22.9v-11.3Z"/>
+          <polyline class="cls-36" points="243 37.2 248.7 31.5 243 25.9 199 25.9 199 37.2"/>
+          <polyline class="cls-16" points="243 37.2 248.7 31.5 243 25.9"/>
+          <line class="cls-16" x1="199" y1="25.9" x2="199" y2="37.2"/>
+          <path class="cls-16" d="M199,37.2h44M199,25.9h44"/>
+          <polyline class="cls-38" points="107.5 37.2 113.2 31.5 107.5 25.9 106.3 25.9 106.3 37.2"/>
+          <polyline class="cls-18" points="107.5 37.2 113.2 31.5 107.5 25.9"/>
+          <line class="cls-18" x1="106.3" y1="25.9" x2="106.3" y2="37.2"/>
+          <path class="cls-18" d="M106.3,37.2h1.2M106.3,25.9h1.2"/>
+          <polyline class="cls-33" points="102.5 37.2 105.4 31.5 102.5 25.9 102.5 37.2"/>
+          <polyline class="cls-14" points="102.5 37.2 105.4 31.5 102.5 25.9"/>
+          <line class="cls-14" x1="102.5" y1="25.9" x2="102.5" y2="37.2"/>
+          <polyline class="cls-32" points="198 37.2 199 31.5 198 25.9 198 37.2"/>
+          <polyline class="cls-11" points="198 37.2 199 31.5 198 25.9"/>
+          <line class="cls-11" x1="198" y1="25.9" x2="198" y2="37.2"/>
+          <polyline class="cls-32" points="113.2 37.2 114.3 31.5 113.2 25.9 113.2 37.2"/>
+          <polyline class="cls-11" points="113.2 37.2 114.3 31.5 113.2 25.9"/>
+          <line class="cls-11" x1="113.2" y1="25.9" x2="113.2" y2="37.2"/>
+          <rect class="cls-34" x="262.4" y="25.9" width="20.4" height="11.3"/>
+          <rect class="cls-40" x="249.7" y="25.9" width="11.7" height="11.3"/>
+        </g>
+        <text class="cls-23" transform="translate(39.7 33.6)"><tspan x="0" y="0">α-tub promotor</tspan></text>
+        <text class="cls-23" transform="translate(267.7 34)"><tspan x="0" y="0">PAS</tspan></text>
+        <text class="cls-28" transform="translate(249.9 43.6)"><tspan x="0" y="0">resd</tspan></text>
+        <text class="cls-23" transform="translate(11.8 33.6)"><tspan x="0" y="0">5’</tspan></text>
+        <text class="cls-23" transform="translate(290.9 34)"><tspan x="0" y="0">3’</tspan></text>
+        <text class="cls-23" transform="translate(146.6 33.6)"><tspan x="0" y="0">cpGFP</tspan></text>
+        <text class="cls-22" transform="translate(102.5 22.5)"><tspan x="0" y="0">FLAG</tspan></text>
+        <text class="cls-29" transform="translate(106.3 45.7)"><tspan x="0" y="0">ENOS</tspan></text>
+        <text class="cls-27" transform="translate(123.1 22.3)"><tspan x="0" y="0">Linker 1</tspan></text>
+        <text class="cls-27" transform="translate(206.4 22.3)"><tspan x="0" y="0">Linker 2</tspan></text>
+        <text class="cls-23" transform="translate(215.7 34)"><tspan x="0" y="0">CaM</tspan></text>
+        <text class="cls-45" transform="translate(6 11.8)"><tspan x="0" y="0">a</tspan></text>
+        <text class="cls-23" transform="translate(16.3 14.5)"><tspan x="0" y="0">Calcium indicator GCaMP8</tspan></text>
+        <g>
+          <polyline class="cls-10" points="109.4 14.5 101.6 14.5 101.6 25.9"/>
+          <polygon points="109 13.2 111.3 14.5 109 15.8 109 13.2"/>
+        </g>
+        <text class="cls-31" transform="translate(32.9 56.3)"><tspan class="cls-46" x="0" y="0">P.caudatum </tspan><tspan class="cls-25" x="33.7" y="0">tubulin 5’UTR</tspan></text>
+        <text class="cls-31" transform="translate(261.1 56.3)"><tspan class="cls-46" x="0" y="0">P.caudatum </tspan><tspan class="cls-25" x="33.7" y="0">tubulin 3’UTR</tspan></text>
+      </g>
+      <g>
+        <text class="cls-45" transform="translate(6.2 76.4)"><tspan x="0" y="0">b</tspan></text>
+        <text class="cls-23" transform="translate(16.6 82.3)"><tspan x="0" y="0">Voltage indicator pACE-mNeonGreen-Kv2.1</tspan></text>
+        <g>
+          <g>
+            <rect class="cls-34" x="319.4" y="98.5" width="20.4" height="11.3"/>
+            <polyline class="cls-37" points="23.3 109.7 23.3 98.5 102 98.5 101.5 104.1 102 109.7"/>
+            <polyline class="cls-37" points="23.3 109.7 23.3 98.5 102 98.5 101.5 104.1 102 109.7"/>
+            <line class="cls-2" x1="23.3" y1="109.7" x2="23.3" y2="98.5"/>
+            <line class="cls-2" x1="23.3" y1="109.7" x2="23.3" y2="98.5"/>
+            <path class="cls-2" d="M102,109.7"/>
+            <path class="cls-2" d="M102,98.5"/>
+            <path class="cls-2" d="M102,109.7"/>
+            <path class="cls-2" d="M102,98.5"/>
+            <path class="cls-2" d="M23.3,109.7h78.6M23.3,98.5h78.6"/>
+            <path class="cls-2" d="M23.3,98.5h78.6v11.3H23.3"/>
+            <polyline class="cls-35" points="102.5 109.7 102.5 98.5 181 98.5 187.6 104.1 181 109.7"/>
+            <polyline class="cls-35" points="102.5 109.7 102.5 98.5 181 98.5 187.6 104.1 181 109.7"/>
+            <line class="cls-12" x1="102.5" y1="109.7" x2="102.5" y2="98.5"/>
+            <line class="cls-12" x1="102.5" y1="109.7" x2="102.5" y2="98.5"/>
+            <polyline class="cls-12" points="181 98.5 187.6 104.1 181 109.7"/>
+            <path class="cls-12" d="M102.5,109.7h78.5M102.5,98.5h78.5"/>
+            <path class="cls-12" d="M102.5,109.7h78.5M102.5,98.5h78.5"/>
+            <polyline class="cls-44" points="188.4 109.7 188.4 98.5 265.4 98.5 271.9 104.1 265.4 109.7"/>
+            <line class="cls-7" x1="188.4" y1="109.7" x2="188.4" y2="98.5"/>
+            <polyline class="cls-7" points="265.4 98.5 271.9 104.1 265.4 109.7"/>
+            <path class="cls-7" d="M188.4,109.7h77M188.4,98.5h77"/>
+            <polyline class="cls-35" points="282 109.7 282 98.5 299.8 98.5 306.4 104.1 299.8 109.7"/>
+            <line class="cls-12" x1="282" y1="109.7" x2="282" y2="98.5"/>
+            <polyline class="cls-12" points="299.8 98.5 306.4 104.1 299.8 109.7"/>
+            <path class="cls-12" d="M282,109.7h17.8M282,98.5h17.8"/>
+            <path class="cls-2" d="M333.2,109.7"/>
+            <path class="cls-2" d="M333.2,98.5"/>
+            <polyline class="cls-36" points="271.9 109.7 271.9 98.5 272.8 98.5 279.4 104.1 272.8 109.7"/>
+            <line class="cls-17" x1="271.9" y1="109.7" x2="271.9" y2="98.5"/>
+            <polyline class="cls-17" points="272.8 98.5 279.4 104.1 272.8 109.7"/>
+            <path class="cls-17" d="M271.9,109.7h.9M271.9,98.5h.9"/>
+            <polyline class="cls-33" points="279.4 109.7 279.4 98.5 282 104.1 279.4 109.7"/>
+            <line class="cls-13" x1="279.4" y1="109.7" x2="279.4" y2="98.5"/>
+            <polyline class="cls-13" points="279.4 98.5 282 104.1 279.4 109.7"/>
+            <text class="cls-23" transform="translate(131.3 106.7)"><tspan x="0" y="0">ACE</tspan></text>
+            <text class="cls-23" transform="translate(210.5 106.7)"><tspan x="0" y="0">mNeonGreen</tspan></text>
+            <text class="cls-23" transform="translate(39.9 106.7)"><tspan x="0" y="0">α-tub promotor</tspan></text>
+            <text class="cls-23" transform="translate(324.2 106.7)"><tspan x="0" y="0">PAS</tspan></text>
+            <text class="cls-26" transform="translate(265.4 91.7)"><tspan x="0" y="0">KGC</tspan></text>
+            <text class="cls-30" transform="translate(274.5 118.6)"><tspan x="0" y="0">ER2</tspan></text>
+            <text class="cls-23" transform="translate(285.8 106.7)"><tspan x="0" y="0">Kv2.1</tspan></text>
+            <text class="cls-20" transform="translate(306.4 116.2)"><tspan x="0" y="0">resd</tspan></text>
+            <rect class="cls-40" x="306.8" y="98.5" width="11.7" height="11.3"/>
+            <text class="cls-23" transform="translate(12 106.7)"><tspan x="0" y="0">5’</tspan></text>
+            <text class="cls-23" transform="translate(347.4 106.7)"><tspan x="0" y="0">3’</tspan></text>
+          </g>
+          <g>
+            <polyline class="cls-10" points="110.2 87.3 102.3 87.3 102.4 98.6"/>
+            <polygon points="109.8 85.9 112 87.3 109.8 88.6 109.8 85.9"/>
+          </g>
+        </g>
+      </g>
+      <g>
+        <g>
+          <g>
+            <polygon class="cls-19" points="248.2 174.5 238.5 174.5 238.5 168.2 248.2 168.2 250.4 171.4 248.2 174.5"/>
+            <polygon class="cls-19" points="151.9 174.5 102.7 174.5 102.7 168.2 151.9 168.2 154.2 171.4 151.9 174.5"/>
+            <polyline class="cls-44" points="232.1 177 237.8 171.4 232.1 165.8 154.7 165.8 154.7 177"/>
+            <polyline class="cls-9" points="232.1 177 237.8 171.4 232.1 165.8"/>
+            <line class="cls-9" x1="154.7" y1="165.8" x2="154.7" y2="177"/>
+            <path class="cls-9" d="M154.7,177h77.4M154.7,165.8h77.4"/>
+            <polyline class="cls-47" points="124.7 177 130.4 171.4 124.7 165.8 122.1 165.8 122.1 177"/>
+            <polyline class="cls-5" points="124.7 177 130.4 171.4 124.7 165.8"/>
+            <line class="cls-5" x1="122.1" y1="165.8" x2="122.1" y2="177"/>
+            <path class="cls-5" d="M122.1,177h2.6M122.1,165.8h2.6"/>
+            <polyline class="cls-47" points="135.8 177 141.5 171.4 135.8 165.8 133.5 165.8 133.5 177"/>
+            <polyline class="cls-5" points="135.8 177 141.5 171.4 135.8 165.8"/>
+            <line class="cls-5" x1="133.5" y1="165.8" x2="133.5" y2="177"/>
+            <path class="cls-5" d="M133.5,177h2.3M133.5,165.8h2.3"/>
+            <polyline class="cls-47" points="147.4 177 152.2 171.4 147.4 165.8 147.4 177"/>
+            <polyline class="cls-5" points="147.4 177 152.2 171.4 147.4 165.8"/>
+            <line class="cls-5" x1="147.4" y1="165.8" x2="147.4" y2="177"/>
+            <polyline class="cls-43" points="239.8 177 244.3 171.4 239.8 165.8 239.8 177"/>
+            <polyline class="cls-47" points="239.8 177 244.3 171.4 239.8 165.8"/>
+            <line class="cls-5" x1="239.8" y1="165.8" x2="239.8" y2="177"/>
+            <path class="cls-15" d="M152.2,171.4"/>
+            <rect class="cls-42" x="261.9" y="165.8" width="17.6" height="11.2"/>
+            <rect class="cls-39" x="251" y="165.8" width="10.1" height="11.2"/>
+            <polygon class="cls-42" points="24.1 177 24.1 165.7 102.7 165.7 102.3 171.4 102.7 177 24.1 177"/>
+          </g>
+          <text class="cls-23" transform="translate(42.9 173.7)"><tspan x="0" y="0">α-tub promotor</tspan></text>
+          <text class="cls-23" transform="translate(264.5 173.1)"><tspan x="0" y="0">PAS</tspan></text>
+          <text class="cls-20" transform="translate(246.8 182.7)"><tspan x="0" y="0">resd</tspan></text>
+          <text class="cls-23" transform="translate(287.8 173.1)"><tspan x="0" y="0">3’</tspan></text>
+          <text class="cls-23" transform="translate(184.2 173.6)"><tspan x="0" y="0">cpGFP</tspan></text>
+          <text class="cls-23" transform="translate(18.8 156.8)"><tspan x="0" y="0">Voltage indicator ASAP5</tspan></text>
+          <g>
+            <polyline class="cls-10" points="110.5 154.4 102.7 154.4 102.8 165.8"/>
+            <polygon points="110.2 153.1 112.4 154.4 110.2 155.7 110.2 153.1"/>
+          </g>
+          <text class="cls-23" transform="translate(12.2 173.1)"><tspan x="0" y="0">5’</tspan></text>
+        </g>
+        <text class="cls-45" transform="translate(6.7 149.8)"><tspan x="0" y="0">c</tspan></text>
+      </g>
+      <g>
+        <line class="cls-4" x1="113.2" y1="25.9" x2="113.7" y2="25.7"/>
+        <line class="cls-1" x1="114.8" y1="25.4" x2="120.6" y2="23.3"/>
+        <line class="cls-4" x1="121.2" y1="23.1" x2="121.6" y2="23"/>
+      </g>
+      <g>
+        <line class="cls-4" x1="197.1" y1="25.9" x2="197.6" y2="25.7"/>
+        <line class="cls-1" x1="198.7" y1="25.4" x2="204.6" y2="23.3"/>
+        <line class="cls-4" x1="205.1" y1="23.1" x2="205.6" y2="23"/>
+      </g>
+      <text class="cls-21" transform="translate(159.3 196.6)"><tspan x="0" y="0">transmembrane domains</tspan></text>
+      <text class="cls-24" transform="translate(105.4 163.1)"><tspan x="0" y="0">TPTE2</tspan></text>
+      <text class="cls-21" transform="translate(122.1 184.6)"><tspan x="0" y="0">S1</tspan></text>
+      <text class="cls-21" transform="translate(133.5 184.6)"><tspan x="0" y="0">S2</tspan></text>
+      <text class="cls-21" transform="translate(147.4 184.7)"><tspan x="0" y="0">S3</tspan></text>
+      <text class="cls-21" transform="translate(234.9 184.6)"><tspan x="0" y="0">S4</tspan></text>
+      <line class="cls-8" x1="122.4" y1="186.6" x2="154.2" y2="192.3"/>
+      <line class="cls-8" x1="140.6" y1="186.2" x2="159.3" y2="191.5"/>
+      <line class="cls-8" x1="154.2" y1="185.8" x2="168.3" y2="190.7"/>
+      <line class="cls-8" x1="225" y1="191.6" x2="242.1" y2="187"/>
+      <text class="cls-23" transform="translate(329.6 91.7)"><tspan x="0" y="0">2.852 kb</tspan></text>
+      <text class="cls-23" transform="translate(268.8 160.1)"><tspan x="0" y="0">2.433 kb</tspan></text>
+      <text class="cls-23" transform="translate(271.9 18)"><tspan x="0" y="0">2.427 kb</tspan></text>
+      <text class="cls-31" transform="translate(35.7 126.9)"><tspan class="cls-46" x="0" y="0">P.caudatum </tspan><tspan class="cls-25" x="33.7" y="0">tubulin 5’UTR</tspan></text>
+      <text class="cls-31" transform="translate(319.4 127.2)"><tspan class="cls-46" x="0" y="0">P.caudatum </tspan><tspan class="cls-25" x="33.7" y="0">tubulin 3’UTR</tspan></text>
+      <text class="cls-31" transform="translate(31.6 202.3)"><tspan class="cls-46" x="0" y="0">P.caudatum </tspan><tspan class="cls-25" x="33.7" y="0">tubulin 5’UTR</tspan></text>
+      <text class="cls-31" transform="translate(261.9 202.3)"><tspan class="cls-46" x="0" y="0">P.caudatum </tspan><tspan class="cls-25" x="33.7" y="0">tubulin 3’UTR</tspan></text>
+    </g>
+  </g>
+</svg>
