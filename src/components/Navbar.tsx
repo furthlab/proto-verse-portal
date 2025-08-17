@@ -20,6 +20,9 @@ const Navbar = () => {
             <Link to="/" className="text-foreground hover:text-primary transition-colors">
               Home
             </Link>
+            <Link to="/#" className="text-foreground hover:text-primary transition-colors">
+              Getting Started
+            </Link>
             <Link to="/evolutionary-tree" className="text-foreground hover:text-primary transition-colors">
               Organisms
             </Link>
