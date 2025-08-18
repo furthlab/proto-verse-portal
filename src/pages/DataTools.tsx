@@ -1,51 +1,53 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Database, Download, FileText, BarChart3, Code, Globe } from "lucide-react";
+import { Database, Download, FileText, BarChart3, Code, Globe, Cpu, Monitor, Video } from "lucide-react";
 
 const DataTools = () => {
   const tools = [
+    // Software
     {
-      title: "Genome Browser",
-      description: "Interactive visualization of genomic features and annotations",
+      title: "Subcellular Atlas",
+      description: "Explore the spatial organization of transcripts within single cells",
       icon: Globe,
       status: "Available",
-      type: "Visualization"
+      type: "Software"
     },
     {
-      title: "BLAST Search",
-      description: "Sequence similarity search against protist genomes",
-      icon: Database,
-      status: "Coming Soon",
-      type: "Analysis"
-    },
-    {
-      title: "Bulk Download",
-      description: "Download genomic sequences and annotations in bulk",
-      icon: Download,
+      title: "3D Cell Reconstruction",
+      description: "Generate 3D meshes from confocal image stacks",
+      icon: Monitor,
       status: "Available",
-      type: "Data Access"
+      type: "Software"
     },
     {
-      title: "API Access",
-      description: "Programmatic access to genomic data via REST API",
-      icon: Code,
+      title: "Behavioral Video Tracking",
+      description: "Automated scoring of learning and behavior from videos",
+      icon: Video,
       status: "Available",
-      type: "Integration"
+      type: "Software"
     },
+    // Hardware
     {
-      title: "Comparative Analysis",
-      description: "Compare genomic features across multiple species",
-      icon: BarChart3,
-      status: "Coming Soon",
-      type: "Analysis"
-    },
-    {
-      title: "Format Converter",
-      description: "Convert between different genomic file formats",
-      icon: FileText,
+      title: "Printable Microchip",
+      description: "Custom microchip for Pavlovian conditioning experiments",
+      icon: Cpu,
       status: "Available",
-      type: "Utility"
+      type: "Hardware"
+    },
+    {
+      title: "Arduino Conditioning Setup",
+      description: "Arduino-based platform for classical conditioning",
+      icon: Cpu,
+      status: "Available",
+      type: "Hardware"
+    },
+    {
+      title: "Multiphoton Photolithography",
+      description: "High-precision 3D photolithographic platform",
+      icon: Monitor,
+      status: "Available",
+      type: "Hardware"
     }
   ];
 
@@ -56,7 +58,7 @@ const DataTools = () => {
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-foreground mb-4">Data Tools</h1>
             <p className="text-xl text-muted-foreground">
-              Computational tools and resources for protist genomics research
+              Computational and experimental tools for cellular and behavioral research
             </p>
           </div>
 
@@ -94,7 +96,7 @@ const DataTools = () => {
               <CardHeader>
                 <CardTitle>API Documentation</CardTitle>
                 <CardDescription>
-                  Access genomic data programmatically using our RESTful API
+                  Access data programmatically using our RESTful API
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -104,8 +106,8 @@ const DataTools = () => {
                   </code>
                 </div>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Query genomic features by gene symbol, feature type, chromosomal location, or genome assembly. 
-                  All responses are returned in JSON format with pagination support.
+                  Query features by gene symbol, type, location, or genome assembly. 
+                  Responses are returned in JSON format with pagination support.
                 </p>
                 <Button variant="outline">View API Docs</Button>
               </CardContent>
@@ -115,7 +117,7 @@ const DataTools = () => {
               <CardHeader>
                 <CardTitle>Data Formats</CardTitle>
                 <CardDescription>
-                  Supported file formats for genomic data exchange
+                  Supported formats for data exchange
                 </CardDescription>
               </CardHeader>
               <CardContent>
