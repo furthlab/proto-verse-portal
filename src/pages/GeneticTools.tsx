@@ -338,11 +338,40 @@ export default function GeneticTools() {
       <p className="text-muted-foreground mt-2 max-w-2xl">
         We have developed a set of calcium and voltage indicators.
         </p>
-        <img 
-              src={indicatorLinesImg} 
-              alt="Calcium and voltage indicators" 
-              className="rounded-lg h-96"
-            />
+        
+        <div className="flex flex-col lg:flex-row items-start gap-6 mt-4">
+  <img 
+    src={indicatorLinesImg} 
+    alt="Calcium and voltage indicators" 
+    className="rounded-lg h-96 lg:w-1/2 object-contain"
+  />
+  <div className="text-sm text-muted-foreground lg:w-1/2">
+    <p>
+      We have generated three codon-optimized constructs for <em>P. caudatum</em>, 
+      where rare codons (occurrence &lt; 20%) were replaced. Each coding sequence is 
+      inserted between 5′ and 3′ UTRs of the <em>P. caudatum</em> α-tubulin gene 
+      in the pSF-aTubCaud vector (derived from pTZ18U). Plasmids are linearized 
+      with <code>ApaI</code> before microinjection. 
+    </p>
+    <ul className="list-disc ml-4 mt-2 space-y-1">
+      <li>
+        🟢 <strong>FLAG-GCaMP8s</strong> – insert size 2427 bp (plasmid 5279 bp) 
+        (<a href="https://www.nature.com/articles/s41586-023-05828-9" target="_blank" rel="noopener noreferrer">Nature 2023</a>)
+      </li>
+      <li>
+        🔴 <strong>pACE</strong> – insert size 2785 bp (plasmid 5637 bp) 
+        (<a href="https://www.science.org/doi/10.1126/science.abm8797" target="_blank" rel="noopener noreferrer">Science 2022</a>)
+      </li>
+      <li>
+        🔵 <strong>ASAP5</strong> – insert size 2433 bp (plasmid 5285 bp) 
+        (<a href="https://www.cell.com/neuron/fulltext/S0896-6273(24)00643-3" target="_blank" rel="noopener noreferrer">Neuron 2024</a>)
+      </li>
+    </ul>
+    <p className="mt-2">
+      Bacterial resistance: Ampicillin (100 µg/mL). Growth temperature: 30 °C. Host strain: NEB Stable.
+    </p>
+  </div>
+</div>
 
         <h2 className="text-xl font-bold tracking-tight text-foreground">Codon optimizer</h2>
         <p className="text-muted-foreground mt-2 max-w-2xl">
