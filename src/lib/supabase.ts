@@ -6,13 +6,10 @@ const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS
 export const supabase = createClient(supabaseUrl, supabaseKey)
 
 export type AnnotationFeature = {
-  feature_key: string
-  taxon_id: string
-  genome_name: string
-  chromosome: string
-  start: number
-  end: number
-  strand: string
-  type: string
+  entry_id: number
+  gene_id: string
+  name: string
+  id: string
+  ortho_7227: number
   gene_symbol: string
 }

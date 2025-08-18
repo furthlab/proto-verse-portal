@@ -36,9 +36,9 @@ const Index = () => {
       // Search in the features table
       console.log('Searching features table...')
       const { data, error } = await supabase
-        .from('features')
+        .from('annotations')
         .select('*')
-        .or(`gene_symbol.ilike.%${query}%,feature_key.ilike.%${query}%,type.ilike.%${query}%,genome_name.ilike.%${query}%`)
+        .or(`gene_symbol.ilike.%${query}%,entry_id.ilike.%${query}%,name.ilike.%${query}%,gene_id.ilike.%${query}%`)
         .limit(50)
 
       console.log('Supabase query completed')
