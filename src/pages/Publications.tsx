@@ -98,7 +98,7 @@ const Publications = () => {
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-foreground mb-4">Publications</h1>
             <p className="text-xl text-muted-foreground">
-              Scientific literature and resources related to protist genomics
+              Scientific literature and resources related to learning in single cells
             </p>
           </div>
 
