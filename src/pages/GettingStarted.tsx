@@ -1,7 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { BookOpen, Database, Search, Users } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Mail, Beaker, Microscope, Video, Dna, Syringe, Settings } from "lucide-react";
 
 const GettingStarted = () => {
   return (
@@ -9,105 +8,196 @@ const GettingStarted = () => {
       <main className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-foreground mb-4">Getting Started with ProtoMem</h1>
+            <h1 className="text-4xl font-bold text-foreground mb-4">Getting Started with Paramecium Research</h1>
             <p className="text-xl text-muted-foreground">
-              Your comprehensive guide to exploring protist genomics and evolutionary biology
+              A step-by-step guide for researchers new to Paramecium, from obtaining cultures to advanced molecular techniques
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 mb-12">
+          <div className="space-y-6 mb-12">
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Search className="w-5 h-5 text-primary" />
-                  Search Features
+                  <Mail className="w-5 h-5 text-primary" />
+                  Step 1: Obtain Paramecium Strains
                 </CardTitle>
                 <CardDescription>
-                  Learn how to search for genes, proteins, and genomic features across multiple protist species
+                  Contact the lab to get your initial cultures
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Use the search functionality to find specific genes by symbol, feature key, or type. 
-                  Results are organized by genome assembly for easy comparison.
+                  To begin your Paramecium research, you'll need to obtain laboratory strains. Contact the research group to request cultures and discuss your research needs.
                 </p>
-                <Button asChild>
-                  <Link to="/">Try Search</Link>
-                </Button>
+                <div className="bg-muted/30 p-4 rounded-lg">
+                  <p className="text-sm font-medium">Contact: furth@scilifelab.uu.se</p>
+                  <p className="text-xs text-muted-foreground mt-1">Include details about your research project and required strains</p>
+                </div>
               </CardContent>
             </Card>
 
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Database className="w-5 h-5 text-primary" />
-                  Browse Organisms
+                  <Beaker className="w-5 h-5 text-primary" />
+                  Step 2: Medium Preparation & Cell Culture
                 </CardTitle>
                 <CardDescription>
-                  Explore the evolutionary relationships between different protist species
+                  Learn to prepare wheat grass medium and maintain cultures
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Navigate through our curated collection of protist genomes and understand 
-                  their phylogenetic relationships.
+                  Paramecium requires specific culture conditions. You'll learn to prepare wheat grass medium and maintain cultures using Klebsiella-inoculated medium for optimal growth.
                 </p>
-                <Button asChild>
-                  <Link to="/evolutionary-tree">View Organisms</Link>
-                </Button>
+                <ul className="text-xs text-muted-foreground space-y-1">
+                  <li>• Wheat grass medium preparation</li>
+                  <li>• Klebsiella bacteria cultivation</li>
+                  <li>• Culture maintenance and feeding schedules</li>
+                  <li>• Sterile technique and contamination prevention</li>
+                </ul>
               </CardContent>
             </Card>
 
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <BookOpen className="w-5 h-5 text-primary" />
-                  Genetic Tools
+                  <Microscope className="w-5 h-5 text-primary" />
+                  Step 3: Basic Microscopy & Staining
                 </CardTitle>
                 <CardDescription>
-                  Access molecular tools and resources for protist research
+                  Master observation, fixation, and staining techniques
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Discover available genetic tools, vectors, and methodologies for 
-                  studying protist biology and development.
+                  Develop essential microscopy skills for observing live and fixed Paramecium specimens using various staining protocols.
                 </p>
-                <Button asChild>
-                  <Link to="/genetic-tools">Explore Tools</Link>
-                </Button>
+                <ul className="text-xs text-muted-foreground space-y-1">
+                  <li>• Live cell observation techniques</li>
+                  <li>• Fixation protocols for different applications</li>
+                  <li>• Vital stains and fluorescent markers</li>
+                  <li>• Image capture and documentation</li>
+                </ul>
               </CardContent>
             </Card>
 
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Users className="w-5 h-5 text-primary" />
-                  Community
+                  <Video className="w-5 h-5 text-primary" />
+                  Step 4: Video & Behavioral Tracking
                 </CardTitle>
                 <CardDescription>
-                  Connect with researchers and contribute to the database
+                  Record and analyze Paramecium behavior and movement
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Join our research community, share your findings, and contribute 
-                  new genomic data to expand the resource.
+                  Learn to capture high-quality videos of Paramecium behavior and use tracking software to quantify movement patterns and responses.
                 </p>
-                <Button variant="outline">Join Community</Button>
+                <ul className="text-xs text-muted-foreground space-y-1">
+                  <li>• Video recording setup and parameters</li>
+                  <li>• Behavioral assay design</li>
+                  <li>• Tracking software and analysis</li>
+                  <li>• Data interpretation and statistics</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Dna className="w-5 h-5 text-primary" />
+                  Step 5: RNA & DNA Extraction
+                </CardTitle>
+                <CardDescription>
+                  Extract nucleic acids for molecular analysis
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Master protocols for extracting high-quality RNA and DNA from Paramecium cultures for downstream molecular applications.
+                </p>
+                <ul className="text-xs text-muted-foreground space-y-1">
+                  <li>• Cell harvesting and concentration</li>
+                  <li>• RNA extraction and quality assessment</li>
+                  <li>• DNA isolation techniques</li>
+                  <li>• Storage and handling protocols</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Syringe className="w-5 h-5 text-primary" />
+                  Step 6: RNAi via Feeding
+                </CardTitle>
+                <CardDescription>
+                  Perform gene knockdown using L4440 plasmid system
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Learn to use the feeding RNAi system with bacteria producing dsRNA from L4440 plasmids to knock down specific genes in Paramecium.
+                </p>
+                <ul className="text-xs text-muted-foreground space-y-1">
+                  <li>• L4440 plasmid cloning and verification</li>
+                  <li>• Bacterial culture and dsRNA production</li>
+                  <li>• Feeding protocols and timing</li>
+                  <li>• Phenotype analysis and validation</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Settings className="w-5 h-5 text-primary" />
+                  Step 7: Transgenic Construction
+                </CardTitle>
+                <CardDescription>
+                  Create transgenic strains using α-tubulin promoter system
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Master the creation of transgenic Paramecium by inserting constructs between the α-tubulin promoter and 3'UTR for stable expression.
+                </p>
+                <ul className="text-xs text-muted-foreground space-y-1">
+                  <li>• Construct design and cloning</li>
+                  <li>• α-tubulin promoter and 3'UTR usage</li>
+                  <li>• Transformation protocols</li>
+                  <li>• Selection and characterization of transformants</li>
+                </ul>
               </CardContent>
             </Card>
           </div>
 
           <div className="bg-muted/50 rounded-lg p-6">
-            <h2 className="text-2xl font-semibold mb-4">Quick Start Guide</h2>
-            <ol className="list-decimal list-inside space-y-3 text-muted-foreground">
-              <li>Start by searching for a gene of interest using the search bar</li>
-              <li>Explore the results across different protist species</li>
-              <li>Use the organism browser to understand evolutionary relationships</li>
-              <li>Check available genetic tools for your species of interest</li>
-              <li>Browse publications for methodology and background information</li>
-            </ol>
+            <h2 className="text-2xl font-semibold mb-4">Research Timeline</h2>
+            <p className="text-sm text-muted-foreground mb-4">
+              These steps typically require 3-6 months to master, depending on your background and research goals. Start with steps 1-3 to establish basic competency before advancing to molecular techniques.
+            </p>
+            <div className="grid md:grid-cols-2 gap-4 text-xs text-muted-foreground">
+              <div>
+                <h3 className="font-medium text-foreground mb-2">Weeks 1-4: Foundation</h3>
+                <p>Obtain strains, learn culture techniques, and basic microscopy</p>
+              </div>
+              <div>
+                <h3 className="font-medium text-foreground mb-2">Weeks 5-8: Documentation</h3>
+                <p>Master video recording, behavioral tracking, and analysis</p>
+              </div>
+              <div>
+                <h3 className="font-medium text-foreground mb-2">Weeks 9-16: Molecular</h3>
+                <p>Learn nucleic acid extraction and RNAi techniques</p>
+              </div>
+              <div>
+                <h3 className="font-medium text-foreground mb-2">Weeks 17-24: Advanced</h3>
+                <p>Develop transgenic capabilities and specialized applications</p>
+              </div>
+            </div>
           </div>
         </div>
       </main>
