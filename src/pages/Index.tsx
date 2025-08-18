@@ -15,16 +15,35 @@ const Index = () => {
   const { toast } = useToast()
 
   const handleSearch = async (query: string) => {
+    console.log('Starting search for:', query)
     setIsLoading(true)
     setSearchTerm(query)
     
     try {
-      // Search in the correct table with correct column names
+      console.log('Connecting to Supabase...')
+      
+      // First, let's test the connection and check what tables exist
+      const { data: tables, error: tablesError } = await supabase
+        .rpc('get_schema_info')
+        .select()
+      
+      if (tablesError) {
+        console.log('Could not get schema info, proceeding with search...')
+      } else {
+        console.log('Available tables:', tables)
+      }
+      
+      // Search in the features table
+      console.log('Searching features table...')
       const { data, error } = await supabase
         .from('features')
         .select('*')
         .or(`gene_symbol.ilike.%${query}%,feature_key.ilike.%${query}%,type.ilike.%${query}%,genome_name.ilike.%${query}%`)
         .limit(50)
+
+      console.log('Supabase query completed')
+      console.log('Error:', error)
+      console.log('Data:', data)
 
       if (error) {
         console.error('Search error:', error)
