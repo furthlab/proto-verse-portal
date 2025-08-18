@@ -43,11 +43,9 @@ const Index = () => {
 
       console.log("Searching features table...");
       const { data, error } = await supabase
-        .from("annotations")
-        .select("*")
-        .or(
-          `gene_symbol.ilike.%${query}%,entry_id.ilike.%${query}%,name.ilike.%${query}%,gene_id.ilike.%${query}%`
-        )
+        .from('annotations')
+        .select('*')
+        .or(`gene_symbol.ilike.%${query}%,name.ilike.%${query}%,gene_id.ilike.%${query}%`)
         .limit(50);
 
       if (error) {
