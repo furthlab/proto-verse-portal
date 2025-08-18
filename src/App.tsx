@@ -7,6 +7,9 @@ import Navbar from "@/components/Navbar";
 import Index from "./pages/Index";
 import EvolutionaryTree from "./pages/EvolutionaryTree";
 import GeneticTools from "./pages/GeneticTools";
+import GettingStarted from "./pages/GettingStarted";
+import DataTools from "./pages/DataTools";
+import Publications from "./pages/Publications";
 import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
@@ -22,6 +25,9 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/evolutionary-tree" element={<EvolutionaryTree />} />
             <Route path="/genetic-tools" element={<GeneticTools />} />
+            <Route path="/getting-started" element={<GettingStarted />} />
+            <Route path="/data-tools" element={<DataTools />} />
+            <Route path="/publications" element={<Publications />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

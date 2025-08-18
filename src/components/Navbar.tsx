@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { Search, Menu, Database, BookOpen, Users, Settings } from "lucide-react";
+import { Search, Menu, Database, BookOpen, Users, Settings, X } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Navbar = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <nav className="bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 w-full border-b">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -20,7 +23,7 @@ const Navbar = () => {
             <Link to="/" className="text-foreground hover:text-primary transition-colors">
               Home
             </Link>
-            <Link to="/#" className="text-foreground hover:text-primary transition-colors">
+            <Link to="/getting-started" className="text-foreground hover:text-primary transition-colors">
               Getting Started
             </Link>
             <Link to="/evolutionary-tree" className="text-foreground hover:text-primary transition-colors">
@@ -29,17 +32,17 @@ const Navbar = () => {
             <Link to="/genetic-tools" className="text-foreground hover:text-primary transition-colors">
               Genetic tools
             </Link>
-            <a href="#" className="text-foreground hover:text-primary transition-colors">
+            <Link to="/data-tools" className="text-foreground hover:text-primary transition-colors">
               Data tools
-            </a>
-            <a href="#" className="text-foreground hover:text-primary transition-colors">
+            </Link>
+            <Link to="/publications" className="text-foreground hover:text-primary transition-colors">
               Publications
-            </a>
+            </Link>
           </div>
 
-          {/* Search and Actions */}
-          <div className="flex items-center space-x-4">
-            <Button variant="outline" size="sm" className="hidden sm:flex">
+          {/* Desktop Actions */}
+          <div className="hidden md:flex items-center space-x-4">
+            <Button variant="outline" size="sm">
               <Search className="w-4 h-4 mr-2" />
               Search
             </Button>
@@ -47,11 +50,68 @@ const Navbar = () => {
               <Users className="w-4 h-4 mr-2" />
               Login
             </Button>
-            <Button variant="ghost" size="sm" className="md:hidden">
-              <Menu className="w-4 h-4" />
-            </Button>
           </div>
+
+          {/* Mobile Menu Button */}
+          <Button 
+            variant="ghost" 
+            size="sm" 
+            className="md:hidden"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+          </Button>
         </div>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden border-t bg-background/95 backdrop-blur">
+            <div className="py-2 space-y-1">
+              <Link 
+                to="/" 
+                className="block px-4 py-2 text-foreground hover:text-primary hover:bg-muted/50 transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Home
+              </Link>
+              <Link 
+                to="/getting-started" 
+                className="block px-4 py-2 text-foreground hover:text-primary hover:bg-muted/50 transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Getting Started
+              </Link>
+              <Link 
+                to="/evolutionary-tree" 
+                className="block px-4 py-2 text-foreground hover:text-primary hover:bg-muted/50 transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Organisms
+              </Link>
+              <Link 
+                to="/genetic-tools" 
+                className="block px-4 py-2 text-foreground hover:text-primary hover:bg-muted/50 transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Genetic tools
+              </Link>
+              <Link 
+                to="/data-tools" 
+                className="block px-4 py-2 text-foreground hover:text-primary hover:bg-muted/50 transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Data tools
+              </Link>
+              <Link 
+                to="/publications" 
+                className="block px-4 py-2 text-foreground hover:text-primary hover:bg-muted/50 transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Publications
+              </Link>
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   );
