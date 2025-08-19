@@ -17,7 +17,7 @@ const Publications = () => {
       ],
       "journal": "Journal of Protistology",
       "year": "2020",
-      "type": "Regular Article",
+      "type": "Research Article",
       "abstract": "Paramecium cells acquired tolerance to toxic ethanol concentrations after pretreatment with lower, non-toxic concentrations. Key findings include: (1) pretreatment effect lasted at least 24 h but faded within 48 h; (2) protein-synthesis inhibitors attenuated the effect; (3) tolerance depended on pretreatment duration and ethanol concentration; (4) pretreatment conferred tolerance to both toxic and lethal ethanol levels; and (5) tolerance was also acquired during starvation—suggesting ethanol-induced tolerance in Paramecium as a primitive model for cellular memory function.",
       "doi": "10.18980/jop.e002",
       "pmid": ""
