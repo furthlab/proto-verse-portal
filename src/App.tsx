@@ -10,6 +10,7 @@ import GeneticTools from "./pages/GeneticTools";
 import GettingStarted from "./pages/GettingStarted";
 import DataTools from "./pages/DataTools";
 import Publications from "./pages/Publications";
+import CultureProtocol from "./pages/CultureProtocol";
 import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ const App = () => (
             <Route path="/getting-started" element={<GettingStarted />} />
             <Route path="/data-tools" element={<DataTools />} />
             <Route path="/publications" element={<Publications />} />
+            <Route path="/culture-protocol" element={<CultureProtocol />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

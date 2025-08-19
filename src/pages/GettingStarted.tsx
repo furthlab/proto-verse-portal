@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Mail, Beaker, Microscope, Video, Dna, Syringe, Settings } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const GettingStarted = () => {
   return (
@@ -50,12 +51,17 @@ const GettingStarted = () => {
                 <p className="text-sm text-muted-foreground mb-4">
                   Paramecium requires specific culture conditions. You'll learn to prepare wheat grass medium and maintain cultures using Klebsiella-inoculated medium for optimal growth.
                 </p>
-                <ul className="text-xs text-muted-foreground space-y-1">
+                <ul className="text-xs text-muted-foreground space-y-1 mb-4">
                   <li>• Wheat grass medium preparation</li>
                   <li>• Klebsiella bacteria cultivation</li>
                   <li>• Culture maintenance and feeding schedules</li>
                   <li>• Sterile technique and contamination prevention</li>
                 </ul>
+                <Link to="/culture-protocol">
+                  <Button variant="outline" size="sm">
+                    View Detailed Protocol
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
 

@@ -45,12 +45,13 @@ const SearchResults = ({ results, searchTerm, isLoading }: SearchResultsProps) =
     )
   }
 
-  // Group results by genome
-  const resultsByGenome = results.reduce((acc, result) => {
-    if (!acc[result.genome_name]) {
-      acc[result.genome_name] = []
+  // Group results by type for better organization
+  const resultsByType = results.reduce((acc, result) => {
+    const type = 'annotations' // All results are from annotations table
+    if (!acc[type]) {
+      acc[type] = []
     }
-    acc[result.genome_name].push(result)
+    acc[type].push(result)
     return acc
   }, {} as Record<string, AnnotationFeature[]>)
 
@@ -61,17 +62,17 @@ const SearchResults = ({ results, searchTerm, isLoading }: SearchResultsProps) =
           Search Results for "{searchTerm}"
         </h3>
         <p className="text-muted-foreground">
-          Found {results.length} annotation{results.length !== 1 ? 's' : ''} across {Object.keys(resultsByGenome).length} genome{Object.keys(resultsByGenome).length !== 1 ? 's' : ''}
+          Found {results.length} annotation{results.length !== 1 ? 's' : ''}
         </p>
       </div>
 
       <div className="space-y-6">
-        {Object.entries(resultsByGenome).map(([genome, features]) => (
-          <Card key={genome} className="border-primary/20">
+        {Object.entries(resultsByType).map(([type, features]) => (
+          <Card key={type} className="border-primary/20">
             <CardHeader className="pb-3">
               <div className="flex items-center space-x-2">
                 <Dna className="w-5 h-5 text-primary" />
-                <CardTitle className="text-xl">{genome}</CardTitle>
+                <CardTitle className="text-xl">Annotations</CardTitle>
                 <Badge variant="secondary" className="ml-auto">
                   {features.length} feature{features.length !== 1 ? 's' : ''}
                 </Badge>
@@ -89,18 +90,15 @@ const SearchResults = ({ results, searchTerm, isLoading }: SearchResultsProps) =
                       <div>
                         <div className="flex items-center space-x-2">
                           <Badge variant="outline" className="text-xs">
-                            {feature.type}
+                            {feature.gene_id}
                           </Badge>
                           <span className="text-sm font-medium">
-                            {feature.start.toLocaleString()} - {feature.end.toLocaleString()}
-                          </span>
-                          <span className="text-xs text-muted-foreground">
-                            ({feature.strand})
+                            {feature.name}
                           </span>
                         </div>
                         <p className="text-sm text-muted-foreground mt-1 truncate max-w-md">
                           {feature.gene_symbol && `Gene: ${feature.gene_symbol} | `}
-                          {feature.feature_key} | Chr: {feature.chromosome}
+                          ID: {feature.entry_id}
                         </p>
                       </div>
                     </div>
