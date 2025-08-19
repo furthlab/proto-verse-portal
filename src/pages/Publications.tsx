@@ -7,6 +7,22 @@ import { BookOpen, ExternalLink, Calendar, Users } from "lucide-react";
 const Publications = () => {
   const publications = [
     {
+      "title": "Characterization of enhanced ethanol tolerance in Paramecium caudatum after exposure to low ethanol concentrations",
+      "authors": [
+        "Chikuda Yasutaka",
+        "Shimada Yuto",
+        "Hasegawa Yuya",
+        "Matsuoka Tatsuomi",
+        "Arikawa Mikihiko"
+      ],
+      "journal": "Journal of Protistology",
+      "year": "2020",
+      "type": "Regular Article",
+      "abstract": "Paramecium cells acquired tolerance to toxic ethanol concentrations after pretreatment with lower, non-toxic concentrations. Key findings include: (1) pretreatment effect lasted at least 24 h but faded within 48 h; (2) protein-synthesis inhibitors attenuated the effect; (3) tolerance depended on pretreatment duration and ethanol concentration; (4) pretreatment conferred tolerance to both toxic and lethal ethanol levels; and (5) tolerance was also acquired during starvation—suggesting ethanol-induced tolerance in Paramecium as a primitive model for cellular memory function.",
+      "doi": "10.18980/jop.e002",
+      "pmid": ""
+    },    
+    {
       title: "Classical conditioning in paramecia",
       authors: ["Hennessey T. M.", "Rucker W. B.", "McDiarmid C. G."],
       journal: "Animal Learning & Behavior",
