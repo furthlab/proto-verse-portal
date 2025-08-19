@@ -7,6 +7,26 @@ import { BookOpen, ExternalLink, Calendar, Users } from "lucide-react";
 const Publications = () => {
   const publications = [
     {
+      title: "Classical conditioning in paramecia",
+      authors: ["Hennessey T. M.", "Rucker W. B.", "McDiarmid C. G."],
+      journal: "Animal Learning & Behavior",
+      year: "1979",
+      type: "Research Article",
+      abstract: "Single Paramecium caudatum were conditioned by pairing an AC-generated electric shock (US) with a vibratory stimulus (CS) produced by an auditory speaker. Naïve paramecia subjected to shock reliably exhibited a backward jerk and axial spinning similar to the avoiding reaction. Such responses did not occur initially to the CS alone, but increasingly appeared during the CS period preceding shock in a delayed conditioning paradigm. Control subjects given unpaired CS and US did not show increased response to CS alone. Short-term memory was demonstrated by extinction-tested subjects being readily reconditioned. Paramecia stored for 24 h showed reliable memory savings. Differential conditioning with two CSs and a truly random presentation control confirmed that the anticipatory conditional responses were due to pairing contingency and not pseudoconditioning.",
+      doi: "10.3758/BF03209695",
+      pmid: ""      
+    },
+    {
+      title: "Spiral motion of Paramecium caudatum in a small capillary glass tube",
+      authors: ["Fukui K.", "Asai H."],
+      journal: "Journal of Protozoology",
+      year: "1976",
+      type: "Research Article",
+      abstract: "The behavior of Paramecium caudatum in small capillary glass tubes was investigated under various ionic conditions and at the various tube diameters. Along the inner walls of the tubes ciliates undergo regular spiral motion, which is completely different from natural spirallings or random walk-like movements observed usually in large vessels. The curvature calculated from the tracks of spiral motions was independent of the inner diameters of capillary tubes, but depend specifically on ionic conditions. A plausible law governing such regular spiral motions of Paramecium caudatum is proposed. A definite part of the anterior end of a ciliate seems to contact the curved surface of the inner wall of a capillary tube during the motion so that the organism receives a constant tactile stimulus, and the direction of motive force keeps a certain angle against the surface."
+      doi: "10.1111/j.1550-7408.1976.tb03840.x",
+      pmid: ""
+    },
+    {
       title: "Mass culture of Paramecium tetraurelia",
       authors: ["Beisson J.", "Bétermier M.", "Bré M.-H.", "Cohen J.", "Duharcourt S.", "Duret L.", "Kung C.", "Malinsky S.", "Meyer E.", "Preer J.R. Jr", "Sperling L."],
       journal: "Cold Spring Harbor Protocols",
