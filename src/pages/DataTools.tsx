@@ -2,12 +2,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Database, Download, FileText, BarChart3, Code, Globe, Cpu, Monitor, Video } from "lucide-react";
-import parameciumGif from "@/assets/paramecium_tracking.gif"; // Import GIF
-import parameciumMeshGif from "@/assets/paramecium_meshes.gif"; // Import second GIF
+
+import parameciumTrackingGif from "@/assets/paramecium_tracking.gif";
+import parameciumMeshGif from "@/assets/paramecium_meshes.gif";
 
 const DataTools = () => {
   const tools = [
-    // Swapped order: Printable Microchip first
+    // Hardware first (swapped order)
     {
       title: "Printable Microchip",
       description: "Custom microchip for Pavlovian conditioning experiments",
@@ -29,14 +30,7 @@ const DataTools = () => {
       icon: Video,
       status: "Available",
       type: "Software",
-      gif: parameciumGif
-    },
-    {
-      title: "Subcellular Atlas",
-      description: "Explore the spatial organization of transcripts within single cells",
-      icon: Globe,
-      status: "Available",
-      type: "Software"
+      gif: parameciumTrackingGif
     },
     {
       title: "Arduino Conditioning Setup",
@@ -44,7 +38,7 @@ const DataTools = () => {
       icon: Cpu,
       status: "Available",
       type: "Hardware"
-    },
+    },    
     {
       title: "Multiphoton Photolithography",
       description: "High-precision 3D photolithographic platform",
@@ -52,6 +46,13 @@ const DataTools = () => {
       status: "Available",
       type: "Hardware"
     }
+    {
+      title: "Subcellular Atlas",
+      description: "Explore the spatial organization of transcripts within single cells",
+      icon: Globe,
+      status: "Available",
+      type: "Software"
+    },    
   ];
 
   return (
@@ -67,7 +68,7 @@ const DataTools = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {tools.map((tool, index) => (
-              <Card key={index} className="relative">
+              <Card key={index} className="relative flex flex-col h-full">
                 <CardHeader>
                   {tool.gif && (
                     <img
@@ -76,8 +77,8 @@ const DataTools = () => {
                       className="w-full aspect-square object-cover rounded-lg mb-3"
                     />
                   )}
-                  <div className="flex items-start justify-between">
-                    <tool.icon className="w-8 h-8 text-primary mb-2" />
+                  <div className="flex items-start justify-between mb-2">
+                    <tool.icon className="w-8 h-8 text-primary" />
                     <div className="flex gap-2">
                       <Badge variant={tool.status === "Available" ? "default" : "secondary"}>
                         {tool.status}
@@ -88,7 +89,7 @@ const DataTools = () => {
                   <CardTitle>{tool.title}</CardTitle>
                   <CardDescription>{tool.description}</CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="mt-auto">
                   <Button 
                     className="w-full" 
                     disabled={tool.status === "Coming Soon"}
