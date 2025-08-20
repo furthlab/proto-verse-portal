@@ -5,6 +5,7 @@ import { Database, Download, FileText, BarChart3, Code, Globe, Cpu, Monitor, Vid
 
 import parameciumTrackingGif from "@/assets/paramecium_tracking.gif";
 import parameciumMeshGif from "@/assets/paramecium_meshes.gif";
+import microwellGif from "@/assets/microwell.gif";
 
 const DataTools = () => {
   const tools = [
@@ -14,7 +15,8 @@ const DataTools = () => {
       description: "Custom microchip for Pavlovian conditioning experiments",
       icon: Cpu,
       status: "Available",
-      type: "Hardware"
+      type: "Hardware",
+      gif: microwellGif
     },
     {
       title: "3D Cell Reconstruction",
