@@ -16,13 +16,6 @@ const DataTools = () => {
       type: "Hardware"
     },
     {
-      title: "Subcellular Atlas",
-      description: "Explore the spatial organization of transcripts within single cells",
-      icon: Globe,
-      status: "Available",
-      type: "Software"
-    },
-    {
       title: "3D Cell Reconstruction",
       description: "Generate 3D meshes from confocal image stacks",
       icon: Monitor,
@@ -37,6 +30,13 @@ const DataTools = () => {
       status: "Available",
       type: "Software",
       gif: parameciumGif
+    },
+    {
+      title: "Subcellular Atlas",
+      description: "Explore the spatial organization of transcripts within single cells",
+      icon: Globe,
+      status: "Available",
+      type: "Software"
     },
     {
       title: "Arduino Conditioning Setup",
@@ -73,7 +73,7 @@ const DataTools = () => {
                     <img
                       src={tool.gif}
                       alt={`${tool.title} animation`}
-                      className="w-full h-48 object-cover rounded-lg mb-3" // fixed height
+                      className="w-full aspect-square object-cover rounded-lg mb-3"
                     />
                   )}
                   <div className="flex items-start justify-between">
