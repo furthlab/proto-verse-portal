@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Database, Download, FileText, BarChart3, Code, Globe, Cpu, Monitor, Video } from "lucide-react";
+import parameciumGif from "@/assets/paramecium_tracking.gif"; // Import GIF
 
 const DataTools = () => {
   const tools = [
@@ -66,6 +67,13 @@ const DataTools = () => {
             {tools.map((tool, index) => (
               <Card key={index} className="relative">
                 <CardHeader>
+                  {tool.title === "Behavioral Video Tracking" && (
+                    <img
+                      src={parameciumGif}
+                      alt="Paramecium tracking animation"
+                      className="w-full rounded-lg mb-3"
+                    />
+                  )}
                   <div className="flex items-start justify-between">
                     <tool.icon className="w-8 h-8 text-primary mb-2" />
                     <div className="flex gap-2">
