@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { Switch } from "@/components/ui/switch";
 import indicatorLinesImg from "@/assets/transgenic_strains.svg"; // <-- Import your image
-import indicatorLinesImg from "@/assets/pSF-aTubCaud.svg"; // <-- Import your image
+import vectorImg from "@/assets/pSF-aTubCaud.svg"; // <-- Import your image
 
 import {
   Select,
