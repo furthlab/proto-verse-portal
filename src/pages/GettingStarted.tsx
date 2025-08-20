@@ -11,7 +11,7 @@ const GettingStarted = () => {
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-foreground mb-4">Getting Started with Paramecium Research</h1>
             <p className="text-xl text-muted-foreground">
-              A step-by-step guide for researchers new to Paramecium, from obtaining cultures to advanced molecular techniques
+              A step-by-step guide for researchers new to Paramecium, from obtaining cultures to advanced molecular techniques. Especially geared towards behavioral and cognitive scientists with limited wet lab background.
             </p>
           </div>
 
