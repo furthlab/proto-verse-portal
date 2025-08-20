@@ -341,7 +341,7 @@ export default function GeneticTools() {
   <div className="lg:w-1/2 flex flex-col gap-4">
     <h2 className="text-xl font-bold tracking-tight text-foreground">The pSF-aTubCaud vector</h2>
     <p className="text-sm text-muted-foreground">
-      We have deposited and onboarded a vector backbone to Twist Biosciences where any insert can be placed between endogenous alpha-tubulin promoter and 5'UTR of <i>P. caudatum</i> and its 3'UTR with a polyadenylation signal (PAS). This ensures robust and predictable expression in <i>P. caudatum</i>. As a user you can merely codon optimize your sequence in the tool below and then order inserts with the pSF-aTubCaud vector backbone from Twist Biosciences.
+      We have deposited and onboarded a vector backbone to Twist Biosciences where any insert can be placed between endogenous alpha-tubulin promoter and 5'UTR of <i>P. caudatum</i> and its 3'UTR with a polyadenylation signal (PAS). This ensures robust and predictable expression in <i>P. caudatum</i>. As a user you can merely codon optimize your sequence in the <a href="#codonoptimizer">codon optimization tool</a below and then order inserts with the pSF-aTubCaud vector backbone from Twist Biosciences.
     </p>
     <p className="text-sm text-muted-foreground">
       The plasmid is derived from pTZ18U, a high-copy-number vector with an ampicillin resistance gene and a multiple cloning site for easy cloning in <i>E. coli</i>. Prior to microinjection, the plasmid is digested with ApaI, generating two fragments. Your gene of interest will be flanked exclusively by the endogenous alpha-tubulin non-coding regions. Ensure that your insert does not contain any ApaI recognition sites, as this would interfere with the digestion and cloning process.
@@ -397,7 +397,7 @@ export default function GeneticTools() {
   </div>
 </div>
 
-        <h2 className="text-xl font-bold tracking-tight text-foreground">Codon optimizer</h2>
+        <h2 className="text-xl font-bold tracking-tight text-foreground" id="codonoptimizer">Codon optimizer</h2>
         <p className="text-muted-foreground mt-2 max-w-2xl">
           Optimize coding sequences for target organisms using species-specific codon usage. Supports human, mouse, fly, and Paramecium (ciliate code).
         </p>
