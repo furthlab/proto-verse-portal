@@ -348,8 +348,15 @@ export default function GeneticTools() {
     </p>
     <ul className="list-disc pl-6">
   <li>
-    <a href="#codonoptimizer" className="text-blue-600 underline">
-      Go to codon optimization tool
+  <a
+    href="#codonoptimizer"
+    onClick={(e) => {
+      e.preventDefault();
+      document.getElementById("codonoptimizer").scrollIntoView({ behavior: "smooth" });
+    }}
+    className="text-blue-600 underline"
+  >
+      Jump to codon optimization tool
     </a>
   </li>
 </ul>
