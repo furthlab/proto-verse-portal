@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Database, Download, FileText, BarChart3, Code, Globe, Cpu, Monitor, Video } from "lucide-react";
 import parameciumGif from "@/assets/paramecium_tracking.gif"; // Import GIF
+import parameciumMeshGif from "@/assets/paramecium_meshes.gif"; // Import second GIF
 
 const DataTools = () => {
   const tools = [
@@ -19,14 +20,16 @@ const DataTools = () => {
       description: "Generate 3D meshes from confocal image stacks",
       icon: Monitor,
       status: "Available",
-      type: "Software"
+      type: "Software",
+      gif: parameciumMeshGif
     },
     {
       title: "Behavioral Video Tracking",
       description: "Automated scoring of learning and behavior from videos",
       icon: Video,
       status: "Available",
-      type: "Software"
+      type: "Software",
+      gif: parameciumGif
     },
     // Hardware
     {
@@ -67,10 +70,10 @@ const DataTools = () => {
             {tools.map((tool, index) => (
               <Card key={index} className="relative">
                 <CardHeader>
-                  {tool.title === "Behavioral Video Tracking" && (
+                  {tool.gif && (
                     <img
-                      src={parameciumGif}
-                      alt="Paramecium tracking animation"
+                      src={tool.gif}
+                      alt={`${tool.title} animation`}
                       className="w-full rounded-lg mb-3"
                     />
                   )}
