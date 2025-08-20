@@ -336,24 +336,27 @@ export default function GeneticTools() {
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <header className="mb-8">
       <h1 className="text-3xl font-bold tracking-tight text-foreground">Genetic tools</h1>
-      <h2 className="text-xl font-bold tracking-tight text-foreground">The pSF-aTubCaud vector</h2>
 
       <div className="flex flex-col lg:flex-row items-start gap-6 mt-4">
-
-  <div className="text-sm text-muted-foreground lg:w-1/2">
-  <p>We have deposited and onboarded a vector backbone to Twist Biosciences where any insert can be placed between endogenous alpha-tubulin promotor and 5'UTR of <i>P.caudatum</i> and its 3'UTR with a polyadenylation signal (PAS) . This ensures robust and predictable expression in <i>P.caudatum</i>. 
-      As a user you can merely codon optimize your sequence in the tool below and then order inserts with pSF-aTubCaud vector backbone from Twist Biosciences.</p> 
-  
-  <p>The plasmid is derived from pTZ18U. Prior to microinjection, the plasmid is digested with ApaI, generating two fragments. Your gene of interest will be flanked exclusively by the endogenous alpha-tubulin non-coding regions. Ensure that your insert does not contain any ApaI recognition sites, as this would interfere with the digestion and cloning process.</p>
+  <div className="lg:w-1/2 flex flex-col gap-4">
+    <h2 className="text-xl font-bold tracking-tight text-foreground">The pSF-aTubCaud vector</h2>
+    <p className="text-sm text-muted-foreground">
+      We have deposited and onboarded a vector backbone to Twist Biosciences where any insert can be placed between endogenous alpha-tubulin promoter and 5'UTR of <i>P. caudatum</i> and its 3'UTR with a polyadenylation signal (PAS). This ensures robust and predictable expression in <i>P. caudatum</i>. As a user you can merely codon optimize your sequence in the tool below and then order inserts with the pSF-aTubCaud vector backbone from Twist Biosciences.
+    </p>
+    <p className="text-sm text-muted-foreground">
+      The plasmid is derived from pTZ18U, a high-copy-number vector with an ampicillin resistance gene and a multiple cloning site for easy cloning in <i>E. coli</i>. Prior to microinjection, the plasmid is digested with ApaI, generating two fragments. Your gene of interest will be flanked exclusively by the endogenous alpha-tubulin non-coding regions. Ensure that your insert does not contain any ApaI recognition sites, as this would interfere with the digestion and cloning process.
+    </p>
   </div>
 
-  <img 
-    src={vectorImg} 
-    alt="vector backbone" 
-    className="rounded-lg h-96 lg:w-1/2 object-contain"
-  />
-
+  <div className="lg:w-1/2 flex justify-center items-start">
+    <img 
+      src={vectorImg} 
+      alt="vector backbone" 
+      className="rounded-lg max-h-[400px] w-full object-contain"
+    />
+  </div>
 </div>
+
 
       <h2 className="text-xl font-bold tracking-tight text-foreground">Transgenic strains</h2>
       <p className="text-muted-foreground mt-2 max-w-2xl">
