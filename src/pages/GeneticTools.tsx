@@ -6,6 +6,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { Switch } from "@/components/ui/switch";
 import indicatorLinesImg from "@/assets/transgenic_strains.svg"; // <-- Import your image
+import indicatorLinesImg from "@/assets/pSF-aTubCaud.svg"; // <-- Import your image
+
 import {
   Select,
   SelectContent,
@@ -335,10 +337,22 @@ export default function GeneticTools() {
       <header className="mb-8">
       <h1 className="text-3xl font-bold tracking-tight text-foreground">Genetic tools</h1>
       <h2 className="text-xl font-bold tracking-tight text-foreground">The pSF-aTubCaud vector</h2>
-      <p className="text-muted-foreground mt-2 max-w-2xl"></p>
-      We have deposited and onboarded a vector backbone to Twist Biosciences where any insert can be placed between endogenous alpha-tubulin promotor and 5'UTR of <i>P.caudatum</i> and its 3'UTR with a polyadenylation signal (PAS) . This ensures robust and predictable expression in <i>P.caudatum</i>. 
+
+      <div className="flex flex-col lg:flex-row items-start gap-6 mt-4">
+
+  <div className="text-sm text-muted-foreground lg:w-1/2">
+  We have deposited and onboarded a vector backbone to Twist Biosciences where any insert can be placed between endogenous alpha-tubulin promotor and 5'UTR of <i>P.caudatum</i> and its 3'UTR with a polyadenylation signal (PAS) . This ensures robust and predictable expression in <i>P.caudatum</i>. 
       As a user you can merely codon optimize your sequence in the tool below and then order inserts with pSF-aTubCaud vector backbone from Twist Biosciences. 
-      </p>
+  </div>
+
+  <img 
+    src={vectorImg} 
+    alt="vector backbone" 
+    className="rounded-lg h-96 lg:w-1/2 object-contain"
+  />
+
+</div>
+
       <h2 className="text-xl font-bold tracking-tight text-foreground">Transgenic strains</h2>
       <p className="text-muted-foreground mt-2 max-w-2xl">
         We have developed a set of calcium and voltage indicators.
