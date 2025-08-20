@@ -341,8 +341,10 @@ export default function GeneticTools() {
       <div className="flex flex-col lg:flex-row items-start gap-6 mt-4">
 
   <div className="text-sm text-muted-foreground lg:w-1/2">
-  We have deposited and onboarded a vector backbone to Twist Biosciences where any insert can be placed between endogenous alpha-tubulin promotor and 5'UTR of <i>P.caudatum</i> and its 3'UTR with a polyadenylation signal (PAS) . This ensures robust and predictable expression in <i>P.caudatum</i>. 
-      As a user you can merely codon optimize your sequence in the tool below and then order inserts with pSF-aTubCaud vector backbone from Twist Biosciences. 
+  <p>We have deposited and onboarded a vector backbone to Twist Biosciences where any insert can be placed between endogenous alpha-tubulin promotor and 5'UTR of <i>P.caudatum</i> and its 3'UTR with a polyadenylation signal (PAS) . This ensures robust and predictable expression in <i>P.caudatum</i>. 
+      As a user you can merely codon optimize your sequence in the tool below and then order inserts with pSF-aTubCaud vector backbone from Twist Biosciences.</p> 
+  
+  <p>The plasmid is derived from pTZ18U. Prior to microinjection, the plasmid is digested with ApaI, generating two fragments. Your gene of interest will be flanked exclusively by the endogenous alpha-tubulin non-coding regions. Ensure that your insert does not contain any ApaI recognition sites, as this would interfere with the digestion and cloning process.</p>
   </div>
 
   <img 
