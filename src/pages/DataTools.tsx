@@ -45,7 +45,7 @@ const DataTools = () => {
       icon: Monitor,
       status: "Available",
       type: "Hardware"
-    }
+    },
     {
       title: "Subcellular Atlas",
       description: "Explore the spatial organization of transcripts within single cells",
