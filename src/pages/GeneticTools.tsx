@@ -334,6 +334,11 @@ export default function GeneticTools() {
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <header className="mb-8">
       <h1 className="text-3xl font-bold tracking-tight text-foreground">Genetic tools</h1>
+      <h2 className="text-xl font-bold tracking-tight text-foreground">The pSF-aTubCaud vector</h2>
+      <p className="text-muted-foreground mt-2 max-w-2xl"></p>
+      We have deposited and onboarded a vector backbone to Twist Biosciences where any insert can be placed between endogenous alpha-tubulin promotor and 5'UTR of <i>P.caudatum</i> and its 3'UTR with a polyadenylation signal (PAS) . This ensures robust and predictable expression in <i>P.caudatum</i>. 
+      As a user you can merely codon optimize your sequence in the tool below and then order inserts with pSF-aTubCaud vector backbone from Twist Biosciences. 
+      </p>
       <h2 className="text-xl font-bold tracking-tight text-foreground">Transgenic strains</h2>
       <p className="text-muted-foreground mt-2 max-w-2xl">
         We have developed a set of calcium and voltage indicators.
