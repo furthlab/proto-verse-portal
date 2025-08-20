@@ -7,7 +7,14 @@ import parameciumMeshGif from "@/assets/paramecium_meshes.gif"; // Import second
 
 const DataTools = () => {
   const tools = [
-    // Software
+    // Swapped order: Printable Microchip first
+    {
+      title: "Printable Microchip",
+      description: "Custom microchip for Pavlovian conditioning experiments",
+      icon: Cpu,
+      status: "Available",
+      type: "Hardware"
+    },
     {
       title: "Subcellular Atlas",
       description: "Explore the spatial organization of transcripts within single cells",
@@ -30,14 +37,6 @@ const DataTools = () => {
       status: "Available",
       type: "Software",
       gif: parameciumGif
-    },
-    // Hardware
-    {
-      title: "Printable Microchip",
-      description: "Custom microchip for Pavlovian conditioning experiments",
-      icon: Cpu,
-      status: "Available",
-      type: "Hardware"
     },
     {
       title: "Arduino Conditioning Setup",
@@ -74,7 +73,7 @@ const DataTools = () => {
                     <img
                       src={tool.gif}
                       alt={`${tool.title} animation`}
-                      className="w-full rounded-lg mb-3"
+                      className="w-full h-48 object-cover rounded-lg mb-3" // fixed height
                     />
                   )}
                   <div className="flex items-start justify-between">
