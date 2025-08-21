@@ -5,19 +5,32 @@ const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS
 
 export const supabase = createClient(supabaseUrl, supabaseKey)
 
+export interface Organism {
+  organism_id: number;
+  name: string;
+  short_name: string;
+}
+
 export interface Gene {
   gene_id: number;
   organism_id: number;
-  symbol?: string;
-  gene_identifier?: string;
-  description?: string;
-  protein_identifier?: string;
-  ensembl_id?: string;
-  GO_bio?: string;
-  GO_cell?: string;
-  GO_mol?: string;
+  symbol: string;
+  gene_identifier: string;
+  description: string;
+  protein_identifier: string;
+  ensembl_id: string;
+  GO_bio: string;
+  GO_cell: string;
+  GO_mol: string;
+  ORGANISMS?: Organism; // joined relation
+}
+
+export interface Ortholog {
+  ortholog_id: number;
+  gene_id: number;
+  ortholog_gene_id: number;
 }
 
 export interface GeneWithOrthologs extends Gene {
-  orthologs?: GeneWithOrthologs[];
+  orthologs?: Gene[]; // expanded orthologs
 }
