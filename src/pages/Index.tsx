@@ -1,77 +1,78 @@
 import HeroSection from "@/components/HeroSection";
 import GenomeBrowser from "@/components/GenomeBrowser";
 import OrganismGrid from "@/components/OrganismGrid";
-import ResearchTools from "@/components/ResearchTools";
 import Footer from "@/components/Footer";
 import SearchResults from "@/components/SearchResults";
 import { useState } from "react";
-import { supabase, type AnnotationFeature } from "@/lib/supabase";
+import { supabase, type GeneWithOrthologs } from "@/lib/supabase";
 import { useToast } from "@/hooks/use-toast";
 
 const Index = () => {
-  const [searchResults, setSearchResults] = useState<AnnotationFeature[]>([]);
+  const [searchResults, setSearchResults] = useState<GeneWithOrthologs[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
   const handleSearch = async (query: string) => {
-    console.log("Starting search for:", query);
     setIsLoading(true);
     setSearchTerm(query);
 
     try {
-      console.log("Testing Supabase connection...");
-      const { data: testData, error: testError } = await supabase
-        .from("annotations")
+      // fetch genes that match symbol or gene_identifier
+      const { data: genes, error } = await supabase
+        .from("GENES")
         .select("*")
-        .limit(1);
-
-      if (testError) {
-        console.error("Connection test failed:", testError);
-        toast({
-          title: "Connection Error",
-          description: "Failed to connect to the database.",
-          variant: "destructive",
-        });
-        setSearchResults([]);
-        return;
-      } else {
-        console.log("Connection test successful, sample row:", testData);
-      }
-
-      console.log("Searching features table...");
-      const { data, error } = await supabase
-        .from("annotations")
-        .select("*")
-        .or(`gene_symbol.ilike.%${query}%,name.ilike.%${query}%,gene_id.ilike.%${query}%`)
+        .or(`symbol.ilike.%${query}%,gene_identifier.ilike.%${query}%`)
         .limit(50);
 
-      if (error) {
-        console.error("Search error:", error);
-        throw error;
-      }
+      if (error) throw error;
 
-      console.log("Search results:", data);
-      setSearchResults(data || []);
-
-      if (data && data.length > 0) {
-        toast({
-          title: "Search Complete",
-          description: `Found ${data.length} annotation${
-            data.length !== 1 ? "s" : ""
-          } matching "${query}"`,
-        });
-      } else {
+      if (!genes || genes.length === 0) {
+        setSearchResults([]);
         toast({
           title: "No Results",
-          description: `No annotations found for "${query}"`,
+          description: `No genes found for "${query}"`,
         });
+        return;
       }
+
+      // fetch orthologs for each gene
+      const genesWithOrthologs: GeneWithOrthologs[] = await Promise.all(
+        genes.map(async (gene) => {
+          const { data: orthologRelations } = await supabase
+            .from("ORTHOLOGS")
+            .select("ortholog_gene_id")
+            .eq("gene_id", gene.gene_id);
+
+          let orthologs: GeneWithOrthologs[] = [];
+
+          if (orthologRelations && orthologRelations.length > 0) {
+            const { data: orthologGenes } = await supabase
+              .from("GENES")
+              .select("*")
+              .in(
+                "gene_id",
+                orthologRelations.map((o) => o.ortholog_gene_id)
+              );
+            orthologs = orthologGenes || [];
+          }
+
+          return { ...gene, orthologs };
+        })
+      );
+
+      setSearchResults(genesWithOrthologs);
+      toast({
+        title: "Search Complete",
+        description: `Found ${genesWithOrthologs.length} gene${
+          genesWithOrthologs.length !== 1 ? "s" : ""
+        } matching "${query}"`,
+      });
     } catch (error) {
       console.error("Search error:", error);
       toast({
         title: "Search Error",
-        description: "Failed to search annotations. Please try again.",
+        description: "Failed to search genes. Please try again.",
         variant: "destructive",
       });
       setSearchResults([]);
@@ -90,9 +91,6 @@ const Index = () => {
       />
       <GenomeBrowser />
       <OrganismGrid />
-      {/*
-      <ResearchTools />
-      */}
       <Footer />
     </>
   );

@@ -1,7 +1,7 @@
-import { type AnnotationFeature } from "@/lib/supabase";
+import { type GeneWithOrthologs } from "@/lib/supabase";
 
 interface SearchResultsProps {
-  results: AnnotationFeature[];
+  results: GeneWithOrthologs[];
   searchTerm: string;
   isLoading: boolean;
 }
@@ -16,18 +16,35 @@ const SearchResults = ({ results, searchTerm, isLoading }: SearchResultsProps) =
   }
 
   return (
-    <div>
-      <h2>Search Results for "{searchTerm}"</h2>
-      <ul>
-        {results.map((r) => (
-          <li key={r.entry_id}>
-            <strong>{r.name || "Unnamed"}</strong>
-            <p>Gene ID: {r.gene_id || "N/A"}</p>
-            <p>Gene Symbol: {r.gene_symbol || "N/A"}</p>
-            <p>GO ID: {r.id || "N/A"}</p>
-          </li>
-        ))}
-      </ul>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+      {results.map((gene) => (
+        <div
+          key={gene.gene_id}
+          className="border rounded-lg shadow p-4 hover:shadow-lg transition"
+        >
+          <h3 className="font-bold text-lg">{gene.symbol || gene.gene_identifier}</h3>
+          <p>{gene.description}</p>
+          <p>
+            <strong>Organism ID:</strong> {gene.organism_id}
+          </p>
+          <p>
+            <strong>Protein ID:</strong> {gene.protein_identifier || "N/A"}
+          </p>
+
+          {gene.orthologs && gene.orthologs.length > 0 && (
+            <div className="mt-2">
+              <h4 className="font-semibold">Orthologs:</h4>
+              <ul className="list-disc list-inside">
+                {gene.orthologs.map((o) => (
+                  <li key={o.gene_id}>
+                    {o.symbol || o.gene_identifier} (Organism {o.organism_id})
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      ))}
     </div>
   );
 };
