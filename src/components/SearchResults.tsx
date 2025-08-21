@@ -108,8 +108,10 @@ const SearchResults = ({ results, searchTerm, isLoading }: SearchResultsProps) =
                       <MapPin className="w-4 h-4 text-muted-foreground" />
                       <div>
                         <div className="flex items-center space-x-2">
+                        <Badge variant="outline" className="text-base px-2 py-1 font-semibold">
+                        {organismEmojis[feature.organisms.organism_id]}
+                        </Badge>
                           <Badge variant="outline" className="text-base px-2 py-1 font-semibold">
-                          {organismEmojis[feature.organisms.organism_id]}
                             {feature.symbol.split(" ")[0]}
                           </Badge>
                           <span className="text-sm font-medium">{feature.description}</span>
@@ -119,16 +121,13 @@ const SearchResults = ({ results, searchTerm, isLoading }: SearchResultsProps) =
                         </p>
                         <ul className="text-sm text-muted-foreground mt-1 space-y-1 max-w-md list-disc list-inside">
                           <li>
-                            <strong>GO biological process:</strong>{" "}
-                            <span className="block truncate">{feature.GO_bio}</span>
+                            <strong>GO biological process:</strong>{" "}<span className="block truncate">{feature.GO_bio}</span>
                           </li>
                           <li>
-                            <strong>GO cellular compartment:</strong>{" "}
-                            <span className="block truncate">{feature.GO_cell}</span>
+                            <strong>GO cellular compartment:</strong>{" "}<span className="block truncate">{feature.GO_cell}</span>
                           </li>
                           <li>
-                            <strong>GO molecular function:</strong>{" "}
-                            <span className="block truncate">{feature.GO_mol}</span>
+                            <strong>GO molecular function:</strong>{" "}<span className="block truncate">{feature.GO_mol}</span>
                           </li>
                         </ul>
                         <p className="text-sm mt-1 truncate max-w-md">
