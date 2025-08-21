@@ -22,7 +22,7 @@ export interface Gene {
   GO_bio: string;
   GO_cell: string;
   GO_mol: string;
-  ORGANISMS?: Organism; // joined relation
+  ORGANISMS?: Organism;
 }
 
 export interface Ortholog {
@@ -32,5 +32,5 @@ export interface Ortholog {
 }
 
 export interface GeneWithOrthologs extends Gene {
-  orthologs?: Gene[]; // expanded orthologs
+  orthologs?: Gene[];
 }
