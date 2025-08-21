@@ -93,12 +93,12 @@ const SearchResults = ({ results, searchTerm, isLoading }: SearchResultsProps) =
                             {feature.gene_id}
                           </Badge>
                           <span className="text-sm font-medium">
-                            {feature.name}
+                            {feature.symbol}
                           </span>
                         </div>
                         <p className="text-sm text-muted-foreground mt-1 truncate max-w-md">
-                          {feature.gene_symbol && `Gene: ${feature.gene_symbol} | `}
-                          ID: {feature.entry_id}
+                          {feature.protein_identifier && `Gene: ${feature.protein_identifier} | `}
+                          ID: {feature.ensembl_id}
                         </p>
                       </div>
                     </div>

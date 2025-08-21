@@ -24,7 +24,7 @@ const Index = () => {
 
       // Test connection by fetching one row from annotations table
       const { data: testData, error: testError } = await supabase
-        .from("annotations")
+        .from("genes")
         .select("*")
         .limit(1);
 
