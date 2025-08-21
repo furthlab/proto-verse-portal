@@ -11,6 +11,22 @@ interface SearchResultsProps {
   isLoading: boolean
 }
 
+// Define emoji mapping
+const organismEmojis: { [key: number]: string } = {
+  1: "🍄 ",  // Physarum polycephalum
+  2: "🐌 ",  // Aplysia californica
+  3: "🪼 ",  // Mnemiopsis leidyi
+  4: "🐭 ",  // Mus musculus
+  5: "🔬 ",  // Paramecium tetraurelia
+  6: "🪰 ",  // Drosophila melanogaster
+  7: "🪱 ",  // Caenorhabditis elegans
+  8: "🍄 ",  // Saccharomyces cerevisiae
+  9: "👤 ",  // Homo sapiens
+  10: "🔬 ", // Stentor coeruleus
+  11: "🌊 ", // Hydra vulgaris
+  12: "🔬 "  // Paramecium caudatum
+};
+
 const SearchResults = ({ results, searchTerm, isLoading }: SearchResultsProps) => {
   const [visibleCount, setVisibleCount] = useState(5)
 
@@ -21,7 +37,9 @@ const SearchResults = ({ results, searchTerm, isLoading }: SearchResultsProps) =
           <CardContent className="p-6">
             <div className="flex items-center justify-center space-x-2">
               <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-primary"></div>
-              <span className="text-muted-foreground">Searching 207,012 annotations this might take some time...</span>
+              <span className="text-muted-foreground">
+                Searching 207,012 annotations this might take some time...
+              </span>
             </div>
           </CardContent>
         </Card>
@@ -84,19 +102,21 @@ const SearchResults = ({ results, searchTerm, isLoading }: SearchResultsProps) =
                 {features.slice(0, visibleCount).map((feature, index) => (
                   <div
                     key={index}
-                    className="flex items-center justify-between p-3 bg-muted/30 rounded-lg hover:bg-muted/50 transition-colors"
+                    className="flex flex-col p-3 bg-muted/30 rounded-lg hover:bg-muted/50 transition-colors"
                   >
                     <div className="flex items-center space-x-3">
                       <MapPin className="w-4 h-4 text-muted-foreground" />
                       <div>
-                      <div className="flex items-center space-x-2">
-  <Badge variant="outline" className="text-base px-2 py-1 font-semibold">
-    {feature.symbol.split(" ")[0]}
-  </Badge>
-  <span className="text-sm font-medium">
-    {feature.description}
-  </span>
-</div>
+                        <div className="flex items-center space-x-2">
+                          <Badge variant="outline" className="text-base px-2 py-1 font-semibold">
+                          {organismEmojis[feature.organisms.organism_id]}
+                            {feature.symbol.split(" ")[0]}
+                          </Badge>
+                          <span className="text-sm font-medium">{feature.description}</span>
+                        </div>
+                        <p className="text-sm mt-1 truncate max-w-md">
+                          <strong><i>{feature.organisms.name}</i></strong>
+                        </p>
                         <ul className="text-sm text-muted-foreground mt-1 space-y-1 max-w-md list-disc list-inside">
                           <li>
                             <strong>GO biological process:</strong>{" "}
@@ -112,11 +132,29 @@ const SearchResults = ({ results, searchTerm, isLoading }: SearchResultsProps) =
                           </li>
                         </ul>
                         <p className="text-sm mt-1 truncate max-w-md">
-                          {feature.protein_identifier && `Gene: ${feature.protein_identifier} | `}
-                          ID: {feature.ensembl_id}
+                          {feature.protein_identifier && `Protein: ${feature.protein_identifier} | `}
+                          RNA transcript: {feature.ensembl_id} 
                         </p>
-
                       </div>
+                    </div>
+
+                    {/* Buttons row at bottom right */}
+                    <div className="flex justify-end space-x-2 mt-3">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => console.log("Orthologs for", feature.ensembl_id)}
+                      >
+                        Orthologs
+                      </Button>
+                      <Button
+                        disabled={true}
+                        variant="outline"
+                        size="sm"
+                        onClick={() => console.log("JBrowse for", feature.ensembl_id)}
+                      >
+                        JBrowse
+                      </Button>
                     </div>
                   </div>
                 ))}

@@ -302,7 +302,7 @@ export default function GeneticTools() {
     };
   }, []);
 
-  const [organism, setOrganism] = useState<OrganismKey>("human");
+  const [organism, setOrganism] = useState<OrganismKey>("paramecium_caudatum");
   const [dna, setDna] = useState("ATGCAGACCGCTGACCGCGACCAAATATAC");
   const [applyThreshold, setApplyThreshold] = useState(true);
   const [threshold, setThreshold] = useState(0.2); // 0..1

@@ -1,7 +1,6 @@
 import HeroSection from "@/components/HeroSection";
 import GenomeBrowser from "@/components/GenomeBrowser";
 import OrganismGrid from "@/components/OrganismGrid";
-import ResearchTools from "@/components/ResearchTools";
 import Footer from "@/components/Footer";
 import SearchResults from "@/components/SearchResults";
 import { useState } from "react";
@@ -15,14 +14,11 @@ const Index = () => {
   const { toast } = useToast();
 
   const handleSearch = async (query: string) => {
-    console.log("Starting search for:", query);
     setIsLoading(true);
     setSearchTerm(query);
 
     try {
-      console.log("Testing Supabase connection...");
-
-      // Test connection by fetching one row from annotations table
+      // Test connection by fetching one row from the genes table
       const { data: testData, error: testError } = await supabase
         .from("genes")
         .select("*")
@@ -37,30 +33,33 @@ const Index = () => {
         });
         setSearchResults([]);
         return;
-      } else {
-        console.log("Connection test successful, sample row:", testData);
       }
 
-      console.log("Searching features table...");
+      // Search the genes table
       const { data, error } = await supabase
         .from('genes')
-        .select('*')
+        .select(`
+          *,
+          organisms!inner(name, organism_id)
+        `)
         .or(`symbol.ilike.%${query}%,description.ilike.%${query}%`)
         .limit(50);
 
-      if (error) {
-        console.error("Search error:", error);
-        throw error;
-      }
+      if (error) throw error;
 
-      console.log("Search results:", data);
-      setSearchResults(data || []);
+      // Map nested organism name to a top-level field
+      const mappedData: AnnotationFeature[] = (data || []).map(f => ({
+        ...f,
+        organism_name: f.organisms?.name ?? 'Unknown',
+      }));
 
-      if (data && data.length > 0) {
+      setSearchResults(mappedData);
+
+      if (mappedData.length > 0) {
         toast({
           title: "Search Complete",
-          description: `Found ${data.length} annotation${
-            data.length !== 1 ? "s" : ""
+          description: `Found ${mappedData.length} annotation${
+            mappedData.length !== 1 ? "s" : ""
           } matching "${query}"`,
         });
       } else {

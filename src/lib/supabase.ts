@@ -15,5 +15,6 @@ export type AnnotationFeature = {
   ensembl_id: string
   GO_bio: string
   GO_cell: string
-  GO_mol: string          
+  GO_mol: string
+  organism_name: string
 }
