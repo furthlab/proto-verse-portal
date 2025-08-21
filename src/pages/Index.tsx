@@ -1,14 +1,15 @@
 import HeroSection from "@/components/HeroSection";
 import GenomeBrowser from "@/components/GenomeBrowser";
 import OrganismGrid from "@/components/OrganismGrid";
+import ResearchTools from "@/components/ResearchTools";
 import Footer from "@/components/Footer";
 import SearchResults from "@/components/SearchResults";
 import { useState } from "react";
-import { supabase, type GeneWithOrthologs } from "@/lib/supabase";
+import { supabase, type AnnotationFeature } from "@/lib/supabase";
 import { useToast } from "@/hooks/use-toast";
 
 const Index = () => {
-  const [searchResults, setSearchResults] = useState<GeneWithOrthologs[]>([]);
+  const [searchResults, setSearchResults] = useState<AnnotationFeature[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
@@ -19,54 +20,60 @@ const Index = () => {
     setSearchTerm(query);
 
     try {
-      // Fetch genes matching query
-      const { data: genes, error: geneError } = await supabase
-        .from("GENES")
-        .select("*")
-        .or(
-          `symbol.ilike.%${query}%,gene_identifier.ilike.%${query}%,description.ilike.%${query}%`
-        )
-        .limit(50);
+      console.log("Testing Supabase connection...");
 
-      if (geneError) throw geneError;
-      if (!genes || genes.length === 0) {
+      // Test connection by fetching one row from annotations table
+      const { data: testData, error: testError } = await supabase
+        .from("annotations")
+        .select("*")
+        .limit(1);
+
+      if (testError) {
+        console.error("Connection test failed:", testError);
+        toast({
+          title: "Connection Error",
+          description: "Failed to connect to the database.",
+          variant: "destructive",
+        });
         setSearchResults([]);
-        toast({ title: "No Results", description: `No genes found for "${query}"` });
         return;
+      } else {
+        console.log("Connection test successful, sample row:", testData);
       }
 
-      // Fetch orthologs for each gene
-      const results: GeneWithOrthologs[] = await Promise.all(
-        genes.map(async (gene) => {
-          const { data: orthologLinks } = await supabase
-            .from("ORTHOLOGS")
-            .select("ortholog_gene_id")
-            .eq("gene_id", gene.gene_id);
+      console.log("Searching features table...");
+      const { data, error } = await supabase
+        .from('annotations')
+        .select('*')
+        .or(`gene_symbol.ilike.%${query}%,name.ilike.%${query}%,gene_id.ilike.%${query}%`)
+        .limit(50);
 
-          if (!orthologLinks || orthologLinks.length === 0) return gene;
+      if (error) {
+        console.error("Search error:", error);
+        throw error;
+      }
 
-          // fetch actual ortholog genes
-          const orthologIds = orthologLinks.map((o) => o.ortholog_gene_id);
-          const { data: orthologGenes } = await supabase
-            .from("GENES")
-            .select("*")
-            .in("gene_id", orthologIds);
+      console.log("Search results:", data);
+      setSearchResults(data || []);
 
-          return { ...gene, orthologs: orthologGenes || [] };
-        })
-      );
-
-      setSearchResults(results);
-
-      toast({
-        title: "Search Complete",
-        description: `Found ${results.length} gene${results.length !== 1 ? "s" : ""} matching "${query}"`,
-      });
+      if (data && data.length > 0) {
+        toast({
+          title: "Search Complete",
+          description: `Found ${data.length} annotation${
+            data.length !== 1 ? "s" : ""
+          } matching "${query}"`,
+        });
+      } else {
+        toast({
+          title: "No Results",
+          description: `No annotations found for "${query}"`,
+        });
+      }
     } catch (error) {
       console.error("Search error:", error);
       toast({
         title: "Search Error",
-        description: "Failed to search genes. Please try again.",
+        description: "Failed to search annotations. Please try again.",
         variant: "destructive",
       });
       setSearchResults([]);
@@ -78,9 +85,16 @@ const Index = () => {
   return (
     <>
       <HeroSection onSearch={handleSearch} />
-      <SearchResults results={searchResults} searchTerm={searchTerm} isLoading={isLoading} />
+      <SearchResults
+        results={searchResults}
+        searchTerm={searchTerm}
+        isLoading={isLoading}
+      />
       <GenomeBrowser />
       <OrganismGrid />
+      {/*
+      <ResearchTools />
+      */}
       <Footer />
     </>
   );
