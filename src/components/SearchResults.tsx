@@ -47,7 +47,7 @@ const SearchResults = ({ results, searchTerm, isLoading }: SearchResultsProps) =
 
   // Group results by type for better organization
   const resultsByType = results.reduce((acc, result) => {
-    const type = 'annotations' // All results are from annotations table
+    const type = 'genes' // All results are from annotations table
     if (!acc[type]) {
       acc[type] = []
     }
