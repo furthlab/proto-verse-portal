@@ -5,32 +5,11 @@ const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS
 
 export const supabase = createClient(supabaseUrl, supabaseKey)
 
-export type Gene = {
-  gene_id: number
-  organism_id: number
-  symbol: string
-  gene_identifier: string
-  description: string | null
-  protein_identifier: string | null
-  ensembl_id: string | null
-  GO_bio: string | null
-  GO_cell: string | null
-  GO_mol: string | null
-}
-
-export type Organism = {
-  organism_id: number
-  name: string
-  short_name: string
-}
-
-export type Ortholog = {
-  ortholog_id: number
-  gene_id: number
-  ortholog_gene_id: number
-}
-
-export type GeneWithOrthologs = Gene & {
-  organism: Organism
-  orthologs: Gene[]
+export interface AnnotationFeature {
+  entry_id: number;
+  gene_id?: string;
+  gene_symbol?: string;
+  name?: string;
+  id?: string; // GO ID
+  [key: string]: any; // extra fields
 }

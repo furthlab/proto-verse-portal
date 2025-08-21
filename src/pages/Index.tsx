@@ -21,8 +21,6 @@ const Index = () => {
 
     try {
       console.log("Testing Supabase connection...");
-
-      // Test connection by fetching one row from annotations table
       const { data: testData, error: testError } = await supabase
         .from("annotations")
         .select("*")
@@ -43,8 +41,8 @@ const Index = () => {
 
       console.log("Searching features table...");
       const { data, error } = await supabase
-        .from('annotations')
-        .select('*')
+        .from("annotations")
+        .select("*")
         .or(`gene_symbol.ilike.%${query}%,name.ilike.%${query}%,gene_id.ilike.%${query}%`)
         .limit(50);
 
