@@ -71,3 +71,9 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+
+Dont forget in supabase to set policy, in SQL Editor for table "genes":
+
+create policy "Allow anon read" on genes
+for select
+using (true);

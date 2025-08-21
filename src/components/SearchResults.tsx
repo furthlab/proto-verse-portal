@@ -1,7 +1,9 @@
+import { useState } from "react"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { AnnotationFeature } from "@/lib/supabase"
 import { Database, MapPin, Dna } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
 interface SearchResultsProps {
   results: AnnotationFeature[]
@@ -10,6 +12,8 @@ interface SearchResultsProps {
 }
 
 const SearchResults = ({ results, searchTerm, isLoading }: SearchResultsProps) => {
+  const [visibleCount, setVisibleCount] = useState(5)
+
   if (isLoading) {
     return (
       <div className="container mx-auto max-w-6xl px-4 py-8">
@@ -17,7 +21,7 @@ const SearchResults = ({ results, searchTerm, isLoading }: SearchResultsProps) =
           <CardContent className="p-6">
             <div className="flex items-center justify-center space-x-2">
               <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-primary"></div>
-              <span className="text-muted-foreground">Searching annotations...</span>
+              <span className="text-muted-foreground">Searching 207,012 annotations this might take some time...</span>
             </div>
           </CardContent>
         </Card>
@@ -45,12 +49,9 @@ const SearchResults = ({ results, searchTerm, isLoading }: SearchResultsProps) =
     )
   }
 
-  // Group results by type for better organization
   const resultsByType = results.reduce((acc, result) => {
-    const type = 'genes' // All results are from annotations table
-    if (!acc[type]) {
-      acc[type] = []
-    }
+    const type = "genes"
+    if (!acc[type]) acc[type] = []
     acc[type].push(result)
     return acc
   }, {} as Record<string, AnnotationFeature[]>)
@@ -62,7 +63,7 @@ const SearchResults = ({ results, searchTerm, isLoading }: SearchResultsProps) =
           Search Results for "{searchTerm}"
         </h3>
         <p className="text-muted-foreground">
-          Found {results.length} annotation{results.length !== 1 ? 's' : ''}
+          Found {results.length} annotation{results.length !== 1 ? "s" : ""}
         </p>
       </div>
 
@@ -74,42 +75,67 @@ const SearchResults = ({ results, searchTerm, isLoading }: SearchResultsProps) =
                 <Dna className="w-5 h-5 text-primary" />
                 <CardTitle className="text-xl">Annotations</CardTitle>
                 <Badge variant="secondary" className="ml-auto">
-                  {features.length} feature{features.length !== 1 ? 's' : ''}
+                  {features.length} feature{features.length !== 1 ? "s" : ""}
                 </Badge>
               </div>
             </CardHeader>
             <CardContent>
               <div className="grid gap-3">
-                {features.slice(0, 5).map((feature, index) => (
-                  <div 
-                    key={index} 
+                {features.slice(0, visibleCount).map((feature, index) => (
+                  <div
+                    key={index}
                     className="flex items-center justify-between p-3 bg-muted/30 rounded-lg hover:bg-muted/50 transition-colors"
                   >
                     <div className="flex items-center space-x-3">
                       <MapPin className="w-4 h-4 text-muted-foreground" />
                       <div>
-                        <div className="flex items-center space-x-2">
-                          <Badge variant="outline" className="text-xs">
-                            {feature.gene_id}
-                          </Badge>
-                          <span className="text-sm font-medium">
-                            {feature.symbol}
-                          </span>
-                        </div>
-                        <p className="text-sm text-muted-foreground mt-1 truncate max-w-md">
+                      <div className="flex items-center space-x-2">
+  <Badge variant="outline" className="text-base px-2 py-1 font-semibold">
+    {feature.symbol.split(" ")[0]}
+  </Badge>
+  <span className="text-sm font-medium">
+    {feature.description}
+  </span>
+</div>
+                        <ul className="text-sm text-muted-foreground mt-1 space-y-1 max-w-md list-disc list-inside">
+                          <li>
+                            <strong>GO biological process:</strong>{" "}
+                            <span className="block truncate">{feature.GO_bio}</span>
+                          </li>
+                          <li>
+                            <strong>GO cellular compartment:</strong>{" "}
+                            <span className="block truncate">{feature.GO_cell}</span>
+                          </li>
+                          <li>
+                            <strong>GO molecular function:</strong>{" "}
+                            <span className="block truncate">{feature.GO_mol}</span>
+                          </li>
+                        </ul>
+                        <p className="text-sm mt-1 truncate max-w-md">
                           {feature.protein_identifier && `Gene: ${feature.protein_identifier} | `}
                           ID: {feature.ensembl_id}
                         </p>
+
                       </div>
                     </div>
                   </div>
                 ))}
-                {features.length > 5 && (
-                  <p className="text-sm text-muted-foreground text-center py-2">
-                    ... and {features.length - 5} more features
-                  </p>
-                )}
               </div>
+
+              {visibleCount < features.length && (
+                <div className="flex items-center justify-center mt-4 space-x-3">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => setVisibleCount((prev) => prev + 5)}
+                  >
+                    Show More
+                  </Button>
+                  <Badge variant="secondary">
+                    {features.length} total
+                  </Badge>
+                </div>
+              )}
             </CardContent>
           </Card>
         ))}
