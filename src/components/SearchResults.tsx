@@ -9,6 +9,7 @@ interface SearchResultsProps {
   results: AnnotationFeature[]
   searchTerm: string
   isLoading: boolean
+  onOrthologSearch: (geneId: number) => void
 }
 
 // Define emoji mapping
@@ -27,7 +28,7 @@ const organismEmojis: { [key: number]: string } = {
   12: "🔬 "  // Paramecium caudatum
 };
 
-const SearchResults = ({ results, searchTerm, isLoading }: SearchResultsProps) => {
+const SearchResults = ({ results, searchTerm, isLoading, onOrthologSearch }: SearchResultsProps) => {
   const [visibleCount, setVisibleCount] = useState(5)
 
   if (isLoading) {
@@ -109,7 +110,7 @@ const SearchResults = ({ results, searchTerm, isLoading }: SearchResultsProps) =
                       <div>
                         <div className="flex items-center space-x-2">
                         <Badge variant="outline" className="text-base px-2 py-1 font-semibold">
-                        {organismEmojis[feature.organisms.organism_id]}
+                        {organismEmojis[feature.organism_id]}
                         </Badge>
                           <Badge variant="outline" className="text-base px-2 py-1 font-semibold">
                             {feature.symbol.split(" ")[0]}
@@ -117,23 +118,43 @@ const SearchResults = ({ results, searchTerm, isLoading }: SearchResultsProps) =
                           <span className="text-sm font-medium">{feature.description}</span>
                         </div>
                         <p className="text-sm mt-1 truncate max-w-md">
-                          <strong><i>{feature.organisms.name}</i></strong>
+                          <strong><i>{feature.organism_name}</i></strong>
                         </p>
-                        <ul className="text-sm text-muted-foreground mt-1 space-y-1 max-w-md list-disc list-inside">
-                          <li>
-                            <strong>GO biological process:</strong>{" "}<span className="block truncate">{feature.GO_bio}</span>
-                          </li>
-                          <li>
-                            <strong>GO cellular compartment:</strong>{" "}<span className="block truncate">{feature.GO_cell}</span>
-                          </li>
-                          <li>
-                            <strong>GO molecular function:</strong>{" "}<span className="block truncate">{feature.GO_mol}</span>
-                          </li>
-                        </ul>
-                        <p className="text-sm mt-1 truncate max-w-md">
-                          {feature.protein_identifier && `Protein: ${feature.protein_identifier} | `}
-                          RNA transcript: {feature.ensembl_id} 
-                        </p>
+
+                                      {/* GO terms list */}
+              <ul className="mt-2 space-y-1 text-sm text-muted-foreground max-w-md">
+                <li>
+                  <strong>GO biological process:</strong>{" "}
+                  <span className="block truncate">{feature.GO_bio}</span>
+                </li>
+                <li>
+                  <strong>GO cellular compartment:</strong>{" "}
+                  <span className="block truncate">{feature.GO_cell}</span>
+                </li>
+                <li>
+                  <strong>GO molecular function:</strong>{" "}
+                  <span className="block truncate">{feature.GO_mol}</span>
+                </li>
+              </ul>
+
+              {/* Genomic location as a tag */}
+              <div className="mt-3">
+                <span className="text-xs font-medium text-muted-foreground mr-2">
+                  Genomic location:
+                </span>
+                <span className="inline-block bg-primary/10 text-primary px-2 py-1 rounded-md text-xs font-semibold">
+                  ChX:2000–35000
+                </span>
+              </div>
+                      
+                        {/* Protein / RNA info */}
+              <p className="text-sm mt-2 truncate max-w-md">
+                {feature.protein_identifier && (
+                  <span className="font-medium">Protein:</span>
+                )}
+                {feature.protein_identifier && ` ${feature.protein_identifier} | `}
+                <span className="font-medium">RNA transcript:</span> {feature.ensembl_id}
+              </p>
                       </div>
                     </div>
 
@@ -142,7 +163,7 @@ const SearchResults = ({ results, searchTerm, isLoading }: SearchResultsProps) =
                       <Button
                         variant="outline"
                         size="sm"
-                        onClick={() => console.log("Orthologs for", feature.ensembl_id)}
+                        onClick={() => onOrthologSearch(feature.gene_id)}
                       >
                         Orthologs
                       </Button>

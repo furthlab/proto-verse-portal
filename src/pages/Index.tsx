@@ -38,8 +38,7 @@ const Index = () => {
 
         setSearchResults(mappedData);
       } else {
-        // Ortholog search
-        // Step 1: Find gene IDs matching the query
+        // Ortholog search by query string (fallback)
         const { data: genesData } = await supabase
           .from('genes')
           .select('gene_id')
@@ -52,7 +51,6 @@ const Index = () => {
           return;
         }
 
-        // Step 2: Get ortholog gene IDs
         const { data: orthologData } = await supabase
           .from('orthologs')
           .select('ortholog_gene_id')
@@ -65,7 +63,6 @@ const Index = () => {
           return;
         }
 
-        // Step 3: Fetch ortholog details
         const { data: orthologFeatures } = await supabase
           .from('genes')
           .select(`*, organisms!inner(name, organism_id)`)
@@ -91,6 +88,52 @@ const Index = () => {
     }
   };
 
+  const handleOrthologSearch = async (geneId: number) => {
+    setIsLoading(true);
+    try {
+      // Step 1: Get ortholog gene IDs
+      const { data: orthologData, error: orthologError } = await supabase
+        .from('orthologs')
+        .select('ortholog_gene_id')
+        .eq('gene_id', geneId);
+
+      if (orthologError) throw orthologError;
+
+      const orthologGeneIds = orthologData?.map(o => o.ortholog_gene_id) || [];
+      if (orthologGeneIds.length === 0) {
+        setSearchResults([]);
+        setSearchTerm(`orthologs of gene ${geneId}`);
+        return;
+      }
+
+      // Step 2: Fetch ortholog details
+      const { data: orthologFeatures, error: genesError } = await supabase
+        .from('genes')
+        .select(`*, organisms!inner(name, organism_id)`)
+        .in('gene_id', orthologGeneIds);
+
+      if (genesError) throw genesError;
+
+      const mappedData: AnnotationFeature[] = (orthologFeatures || []).map(f => ({
+        ...f,
+        organism_name: f.organisms?.name ?? 'Unknown',
+      }));
+
+      setSearchResults(mappedData);
+      setSearchTerm(`orthologs of gene ${geneId}`);
+    } catch (error) {
+      console.error("Ortholog search error:", error);
+      toast({
+        title: "Search Error",
+        description: "Failed to fetch orthologs. Please try again.",
+        variant: "destructive",
+      });
+      setSearchResults([]);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <>
       <HeroSection 
@@ -102,6 +145,7 @@ const Index = () => {
         results={searchResults}
         searchTerm={searchTerm}
         isLoading={isLoading}
+        onOrthologSearch={handleOrthologSearch}
       />
       <GenomeBrowser />
       <OrganismGrid />
