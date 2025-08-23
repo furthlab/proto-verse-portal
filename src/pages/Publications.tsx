@@ -7,6 +7,25 @@ import { BookOpen, ExternalLink, Calendar, Users } from "lucide-react";
 const Publications = () => {
   const publications = [
     {
+      "title": "A Glass Micro-capillary Method for Cryopreservation of Paramecium caudatum",
+      "authors": [
+        "Hajime Sasaki",
+        "Takayuki Suzuki",
+        "Asuka Asakawa",
+        "Nobuyosi Waki",
+        "Hirohisa Tagawa",
+        "Tokuhiro Shishiuchi",
+        "Kazuki Itabashi",
+        "Nobuyuki Haga"
+      ],
+      "journal": "Nano Biomedicine",
+      "year": "2010",
+      "type": "Method Article",
+      "abstract": "We have developed a specific procedure for cryopreservation of Paramecium caudatum that does not require either a controlled-rate deep freezer or liquid nitrogen. Optimum conditions for cryoprotectants, freezing rates, freezing temperatures, and thawing conditions have been determined by monitoring three cellular characteristics, namely, cellular morphology, ciliary movement and contractile vacuole contraction. Cells at the exponential phase in test tube culture were pre-incubated in the cryoprotectant (5% dimethyl sulfoxide, DMSO) for several hours and then frozen in a glass capillary. Thawing was performed at 35 oC as quickly as possible, then recovered cells were suspended in a post-thawing recovery solution of cell free culture medium (CFCM) containing bovine serum albumin (BSA). About 80% of the recovered cells grew and formed clones in fresh culture medium. Our method gives about 4% of normal viable cells after one week in a freezer at -84 oC. The clones derived from the recovered cells showed normal characteristics with regard to growth, swimming behavior and sexual activity. Our method offers a relatively simple method for routine cryopreservation of Paramecium caudatum.",
+      "doi": "10.11344/nano.2.139",
+      "pmid": ""
+    },
+    {
       "title": "Characterization of enhanced ethanol tolerance in Paramecium caudatum after exposure to low ethanol concentrations",
       "authors": [
         "Chikuda Yasutaka",
