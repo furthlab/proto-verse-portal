@@ -136,11 +136,7 @@ const Index = () => {
 
   return (
     <>
-      <HeroSection 
-        onSearch={handleSearch} 
-        showOrthologs={showOrthologs} 
-        onToggleOrthologs={handleToggleOrthologs} 
-      />
+      <HeroSection onSearch={handleSearch} />
       <SearchResults
         results={searchResults}
         searchTerm={searchTerm}
