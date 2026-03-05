@@ -337,6 +337,18 @@ export default function GeneticTools() {
       <header className="mb-8">
       <h1 className="text-3xl font-bold tracking-tight text-foreground">Genetic tools</h1>
 
+      <section className="mt-6 mb-10">
+        <h2 className="text-xl font-bold tracking-tight text-foreground">PacBio HiFi genome assembly</h2>
+        <p className="text-sm text-muted-foreground mt-2 max-w-3xl">
+          We generated the first PacBio HiFi genome assembly of <em>Paramecium caudatum</em> from the Kajaani wild-type clone 01 strain. The assembly was produced using high-accuracy circular consensus (HiFi) reads, enabling improved contiguity and base-level accuracy compared to previous assemblies. In addition to the genome sequence, the dataset includes native DNA methylation detection (6mA) derived directly from the PacBio HiFi reads, providing a resource to investigate adenine methylation patterns in the highly polyploid macronuclear genome of <em>P. caudatum</em>. This assembly establishes a high-quality reference for studies of genome organization, epigenetic regulation, and single-cell biology in ciliates.
+        </p>
+        <div className="mt-3">
+          <code className="text-xs bg-muted/50 px-2 py-1 rounded font-mono">
+            Pcaudatum_Kajaani01_HiFi_assembly_v01.fasta.gz
+          </code>
+        </div>
+      </section>
+
       <div className="flex flex-col lg:flex-row items-start gap-6 mt-4">
   <div className="lg:w-1/2 flex flex-col gap-4">
     <h2 className="text-xl font-bold tracking-tight text-foreground">The pSF-aTubCaud vector</h2>
