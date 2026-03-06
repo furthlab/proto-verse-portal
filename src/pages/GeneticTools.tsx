@@ -342,10 +342,25 @@ export default function GeneticTools() {
         <p className="text-sm text-muted-foreground mt-2 max-w-3xl">
           We generated the first PacBio HiFi genome assembly of <em>Paramecium caudatum</em> from the Kajaani wild-type clone 01 strain. The assembly was produced using high-accuracy circular consensus (HiFi) reads, enabling improved contiguity and base-level accuracy compared to previous assemblies. In addition to the genome sequence, the dataset includes native DNA methylation detection (6mA) derived directly from the PacBio HiFi reads, providing a resource to investigate adenine methylation patterns in the highly polyploid macronuclear genome of <em>P. caudatum</em>. This assembly establishes a high-quality reference for studies of genome organization, epigenetic regulation, and single-cell biology in ciliates.
         </p>
-        <div className="mt-3">
-          <code className="text-xs bg-muted/50 px-2 py-1 rounded font-mono">
+        <div className="mt-3 space-y-2">
+          <code className="text-xs bg-muted/50 px-2 py-1 rounded font-mono block w-fit">
             Pcaudatum_Kajaani01_HiFi_assembly_v01.fasta.gz
           </code>
+          <p className="text-sm text-muted-foreground mt-2">
+            We also offer precomputed <strong>Bowtie2</strong> indices for rapid read alignment:
+          </p>
+          <div className="flex flex-col gap-1">
+            {[
+              "Pcaudatum_Kajaani01_HiFi_assembly_v01.1.bt2",
+              "Pcaudatum_Kajaani01_HiFi_assembly_v01.2.bt2",
+              "Pcaudatum_Kajaani01_HiFi_assembly_v01.3.bt2",
+              "Pcaudatum_Kajaani01_HiFi_assembly_v01.4.bt2",
+              "Pcaudatum_Kajaani01_HiFi_assembly_v01.rev.1.bt2",
+              "Pcaudatum_Kajaani01_HiFi_assembly_v01.rev.2.bt2",
+            ].map((f) => (
+              <code key={f} className="text-xs bg-muted/50 px-2 py-1 rounded font-mono block w-fit">{f}</code>
+            ))}
+          </div>
         </div>
       </section>
 
